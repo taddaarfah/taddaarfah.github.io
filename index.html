@@ -6,46 +6,53 @@
   <title>Halaman Personal - [Nama Anda]</title>
   <style>
     :root{
-      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#00e5ff;
-      --glass: rgba(255,255,255,0.03);
-      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --bg:#ffffff; --card:#f7f7f7; --muted:#4a5568; --accent:#26c6c4; /* tosca */
+      --glass: rgba(0,0,0,0.03);
+      font-family: Inter, system-ui, sans-serif;
     }
     *{box-sizing:border-box}
-    body{margin:0;background:linear-gradient(180deg,#071021 0%, #071827 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    body{margin:0;background:#e9fefc;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;position:relative;overflow:hidden}
 
-    .container{width:100%;max-width:980px}
-    .card{background:linear-gradient(180deg,var(--card), rgba(8,12,18,0.9));border-radius:16px;padding:28px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,0.6);backdrop-filter:blur(6px)}
+    /* Bubble animation */
+    .bubble{position:absolute;border-radius:50%;background:rgba(38,198,196,0.25);animation:float 12s infinite ease-in-out;filter:blur(4px)}
+    .b1{width:140px;height:140px;top:10%;left:15%;animation-duration:18s}
+    .b2{width:180px;height:180px;bottom:8%;right:20%;animation-duration:22s}
+    .b3{width:110px;height:110px;bottom:30%;left:5%;animation-duration:16s}
 
-    /* Profile column */
+    @keyframes float{
+      0%,100%{transform:translateY(0) translateX(0)}
+      50%{transform:translateY(-40px) translateX(25px)}
+    }
+
+    .container{width:100%;max-width:980px;position:relative;z-index:5}
+    .card{background:var(--card);border-radius:16px;padding:28px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
+
     .avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
-    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6ce0ff);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8bf1ef);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.15)}
     .avatar img{width:100%;height:100%;object-fit:cover}
-    .name{font-size:20px;font-weight:700;margin:0}
+    .name{font-size:20px;font-weight:700;margin:0;color:#2d3748}
     .role{font-size:13px;color:var(--muted);margin-top:4px}
 
-    /* Main info */
     .info{display:flex;flex-direction:column;gap:12px}
-    .bio{color:var(--muted);line-height:1.5}
+    .bio{color:var(--muted);line-height:1.6}
 
     .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
-    .meta .pill{background:var(--glass);padding:8px 12px;border-radius:12px;font-size:13px;color:var(--muted)}
+    .meta .pill{background:#e2fffd;padding:8px 12px;border-radius:12px;font-size:13px;color:#2d7f80;border:1px solid #c3f7f5}
 
     .actions{display:flex;gap:12px;margin-top:16px}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
-    .btn--primary{background:linear-gradient(90deg,var(--accent),#6ce0ff);color:#022;box-shadow:0 6px 18px rgba(0,229,255,0.08)}
-    .btn--outline{background:transparent;color:var(--accent);border:1px solid rgba(0,229,255,0.15)}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,0.1);cursor:pointer}
+    .btn--primary{background:linear-gradient(90deg,var(--accent),#8bf1ef);color:#003333;box-shadow:0 6px 18px rgba(19,200,194,0.18)}
+    .btn--outline{background:white;color:var(--accent);border:1px solid var(--accent)}
 
     .socials{display:flex;gap:12px;margin-top:18px}
-    .socials a{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:var(--glass);text-decoration:none;color:inherit}
-    .socials svg{width:20px;height:20px;opacity:0.95}
+    .socials a{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:#e6fffd;text-decoration:none;color:#1b8d8b;border:1px solid #c6fffb}
+    .socials svg{width:20px;height:20px}
 
-    /* contact list */
     .contact{margin-top:12px;display:flex;flex-direction:column;gap:8px}
-    .contact a{display:flex;align-items:center;gap:10px;color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
-    .contact a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+    .contact a{display:flex;align-items:center;gap:10px;color:#2d7f80;text-decoration:none;padding:8px;border-radius:8px}
+    .contact a:hover{background:#dffffc;color:#158b88}
 
-    /* footer */
-    .footer{margin-top:18px;color:var(--muted);font-size:13px}
+    .footer{margin-top:18px;color:#79999a;font-size:13px}
 
     @media (max-width:720px){
       .card{grid-template-columns:1fr; padding:18px}
@@ -60,14 +67,14 @@
       <div class="avatar-wrap">
         <div class="avatar">
           <!-- GANTI src dengan path foto Anda (mis. assets/me.jpg) -->
-          <img src="arfa.jpg" alt="Foto" />
+          <img src="https://via.placeholder.com/600x600.png?text=Foto+Anda" alt="Foto" />
         </div>
         <div>
           <p class="name">Muh Arfah Awaluddin T.</p>
           <p class="role">Web Developer • Laravel & Fullstack</p>
         </div>
         <div class="meta">
-          <div class="pill">📍 Makassar, Indonesia</div>
+          <div class="pill">📍 Sulawesi Selatan, Indonesia</div>
           <div class="pill">✉️ arfah.tadda54@gmail.com</div>
         </div>
       </div>
@@ -112,8 +119,8 @@
           </div>
 
           <div class="contact">
-            <a href="tel:+6281234567890">📞 +62 812-3456-7890</a>
-            <a href="mailto:arfah@example.com">✉️ arfah@example.com</a>
+            <a href="tel:+6281234567890">📞 +62 82292261930</a>
+            <a href="mailto:arfah@example.com">✉️ arfah.tadda54@gmail.com</a>
             <a href="#" id="copyLink">🔗 Salin tautan profil</a>
           </div>
 

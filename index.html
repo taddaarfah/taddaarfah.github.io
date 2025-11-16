@@ -1,12 +1,139 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Halaman Personal - [Nama Anda]</title>
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#9aa4b2; --accent:#00e5ff;
+      --glass: rgba(255,255,255,0.03);
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#071021 0%, #071827 100%);color:#e6eef6;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+
+    .container{width:100%;max-width:980px}
+    .card{background:linear-gradient(180deg,var(--card), rgba(8,12,18,0.9));border-radius:16px;padding:28px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,0.6);backdrop-filter:blur(6px)}
+
+    /* Profile column */
+    .avatar-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#6ce0ff);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    .name{font-size:20px;font-weight:700;margin:0}
+    .role{font-size:13px;color:var(--muted);margin-top:4px}
+
+    /* Main info */
+    .info{display:flex;flex-direction:column;gap:12px}
+    .bio{color:var(--muted);line-height:1.5}
+
+    .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+    .meta .pill{background:var(--glass);padding:8px 12px;border-radius:12px;font-size:13px;color:var(--muted)}
+
+    .actions{display:flex;gap:12px;margin-top:16px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
+    .btn--primary{background:linear-gradient(90deg,var(--accent),#6ce0ff);color:#022;box-shadow:0 6px 18px rgba(0,229,255,0.08)}
+    .btn--outline{background:transparent;color:var(--accent);border:1px solid rgba(0,229,255,0.15)}
+
+    .socials{display:flex;gap:12px;margin-top:18px}
+    .socials a{width:44px;height:44px;border-radius:10px;display:inline-grid;place-items:center;background:var(--glass);text-decoration:none;color:inherit}
+    .socials svg{width:20px;height:20px;opacity:0.95}
+
+    /* contact list */
+    .contact{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+    .contact a{display:flex;align-items:center;gap:10px;color:var(--muted);text-decoration:none;padding:8px;border-radius:8px}
+    .contact a:hover{background:rgba(255,255,255,0.02);color:var(--accent)}
+
+    /* footer */
+    .footer{margin-top:18px;color:var(--muted);font-size:13px}
+
+    @media (max-width:720px){
+      .card{grid-template-columns:1fr; padding:18px}
+      .avatar{width:140px;height:140px}
+      .actions{flex-direction:column}
+    }
+  </style>
 </head>
 <body>
-    tes
-    
+  <div class="container">
+    <div class="card">
+      <div class="avatar-wrap">
+        <div class="avatar">
+          <!-- GANTI src dengan path foto Anda (mis. assets/me.jpg) -->
+          <img src="https://via.placeholder.com/600x600.png?text=Foto+Anda" alt="Foto" />
+        </div>
+        <div>
+          <p class="name">Muh Arfah Awaluddin T.</p>
+          <p class="role">Web Developer • Laravel & Fullstack</p>
+        </div>
+        <div class="meta">
+          <div class="pill">📍 Makassar, Indonesia</div>
+          <div class="pill">✉️ arfah@example.com</div>
+        </div>
+      </div>
+
+      <div class="info">
+        <div>
+          <p class="bio">Halo — saya Muh Arfah, developer web yang fokus pada aplikasi fullstack menggunakan PHP (Laravel), serta membangun dashboard, sistem kas, dan toko online. Saya suka mendesain UI modern dan mengoptimalkan alur kerja pengembang.</p>
+
+          <div class="actions">
+            <!-- Untuk tombol download CV, ganti href dengan path file CV Anda dan tetapkan atribut download -->
+            <a class="btn btn--primary" href="assets/CV-Muh-Arfah-Awaluddin.pdf" download>
+              <!-- download icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+
+            <a class="btn btn--outline" href="mailto:arfah@example.com">
+              <!-- mail icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Contact Me
+            </a>
+          </div>
+
+          <div class="socials">
+            <!-- Ganti href ke profil sosial Anda -->
+            <a href="https://github.com/username" target="_blank" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .5C5.73.5.75 5.48.75 11.76c0 4.96 3.21 9.15 7.66 10.63.56.1.76-.24.76-.53 0-.26-.01-.96-.01-1.88-3.12.68-3.78-1.5-3.78-1.5-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .02 1.54-.74 1.68-1.13.63-1.12 1.77-.8 2.2-.61.07-.5.25-.81.45-1 .-2.49-1.01-5.11-3.74-6.25C9.05 6.32 8.5 7.5 8.5 7.5c-1.14 1.95.09 3.8.09 3.8 1 .7 1.63.53 2.02.4.06-.6.28-1.02.51-1.25-2.5-.29-5.13-1.25-5.13-5.55 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.47.11-3.06 0 0 .95-.31 3.12 1.15.9-.25 1.86-.38 2.82-.38.96 0 1.92.13 2.82.38 2.16-1.46 3.11-1.15 3.11-1.15.62 1.59.24 2.77.12 3.06.72.79 1.15 1.8 1.15 3.03 0 4.31-2.64 5.26-5.16 5.54.29.25.55.73.55 1.48 0 1.07-.01 1.93-.01 2.2 0 .29.2.64.77.53C20.05 20.9 23.25 16.7 23.25 11.76 23.25 5.48 18.27.5 12 .5z"/></svg>
+            </a>
+
+            <a href="https://www.linkedin.com/in/username" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6S0 4.88 0 3.5 1.12 1 2.49 1 4.98 2.12 4.98 3.5zM.5 8h4v15h-4V8zM8.5 8h3.84v2.08h.05c.54-1.02 1.87-2.08 3.85-2.08 4.12 0 4.88 2.71 4.88 6.23V23H19v-6.79c0-1.62-.03-3.7-2.26-3.7-2.26 0-2.61 1.76-2.61 3.58V23H8.5V8z"/></svg>
+            </a>
+
+            <a href="https://instagram.com/username" target="_blank" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 5.5a4.5 4.5 0 1 0 .001 9.001A4.5 4.5 0 0 0 12 7.5zM18.5 6.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg>
+            </a>
+
+            <a href="https://wa.me/6281234567890" target="_blank" aria-label="WhatsApp">
+              <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20.52 3.48A11.94 11.94 0 0 0 3.5 16.61l-.95 3.5 3.6-.94A11.94 11.94 0 1 0 20.52 3.48zM12.13 18.3c-1.6 0-3.07-.44-4.38-1.2l-.31-.17-2.13.56.57-2.07-.2-.34A8.07 8.07 0 1 1 20.2 8.8 8.05 8.05 0 0 1 12.13 18.3zM17.2 14.8c-.25-.13-1.46-.72-1.69-.8-.23-.07-.4-.12-.57.13-.18.25-.68.8-.83.97-.15.17-.3.19-.55.07-.25-.13-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.5.11-.11.25-.3.37-.45.12-.15.16-.25.25-.42.08-.16.04-.31-.02-.44-.07-.13-.57-1.38-.78-1.9-.2-.5-.4-.43-.57-.43-.15 0-.33-.01-.51-.01-.18 0-.46.07-.7.35-.24.28-.9.88-.9 2.15 0 1.27.93 2.49 1.06 2.66.12.17 1.83 2.8 4.44 3.92 3.08 1.3 3.08.87 3.64.82.56-.05 1.83-.74 2.09-1.46.25-.72.25-1.34.17-1.46-.08-.12-.29-.19-.54-.32z"/></svg>
+            </a>
+
+          </div>
+
+          <div class="contact">
+            <a href="tel:+6281234567890">📞 +62 812-3456-7890</a>
+            <a href="mailto:arfah@example.com">✉️ arfah@example.com</a>
+            <a href="#" id="copyLink">🔗 Salin tautan profil</a>
+          </div>
+
+          <div class="footer">Terakhir diperbarui: 16 November 2025</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Salin URL profil ke clipboard
+    document.getElementById('copyLink').addEventListener('click', function(e){
+      e.preventDefault();
+      const url = window.location.href;
+      navigator.clipboard?.writeText(url).then(()=>{
+        const old = this.textContent;
+        this.textContent = '✅ Tautan disalin';
+        setTimeout(()=> this.textContent = old, 2000);
+      }).catch(()=> alert('Gagal menyalin. Silakan salin manual.'));
+    });
+  </script>
 </body>
 </html>

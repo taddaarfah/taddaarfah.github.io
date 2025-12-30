@@ -1,151 +1,198 @@
-<!doctype html>
-<html lang="id">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muh. Arfah Awaluddin. T</title>
-  <style>
-    :root{
-      --bg:#ffffff; --card:#f7f7f7; --muted:#4a5568; --accent:#26c6c4;
-      --glass: rgba(0,0,0,0.03);
-      font-family: Inter, system-ui, sans-serif;
-    }
-    *{box-sizing:border-box}
-    body{margin:0;background:#e9fefc;min-height:100vh;padding:24px;position:relative;overflow-x:hidden}
-
-    /* Bubble animation */
-    .bubble{position:absolute;border-radius:50%;background:rgba(38,198,196,0.25);animation:float 12s infinite ease-in-out;filter:blur(4px)}
-    .b1{width:140px;height:140px;top:10%;left:15%;animation-duration:18s}
-    .b2{width:180px;height:180px;bottom:8%;right:20%;animation-duration:22s}
-    .b3{width:110px;height:110px;bottom:30%;left:5%;animation-duration:16s}
-
-    @keyframes float{
-      0%,100%{transform:translateY(0) translateX(0)}
-      50%{transform:translateY(-40px) translateX(25px)}
-    }
-
-    .container{width:100%;max-width:980px;position:relative;z-index:5;margin:auto}
-    .card{background:var(--card);border-radius:16px;padding:28px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:center;box-shadow:0 8px 30px rgba(0,0,0,0.1)}
-
-    .avatar-wrap{text-align:center}
-    .avatar{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#8bf1ef);display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.15)}
-    .avatar img{width:100%;height:100%;object-fit:cover}
-    .name{font-size:20px;font-weight:700;margin:0;color:#2d3748}
-    .role{font-size:13px;color:var(--muted)}
-
-    .meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px;justify-content:center}
-    .pill{background:#e2fffd;padding:8px 12px;border-radius:12px;font-size:13px;color:#2d7f80;border:1px solid #c3f7f5}
-
-    .bio{color:var(--muted);line-height:1.6}
-
-    .actions{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-    .btn{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;font-weight:600;text-decoration:none;border:1px solid rgba(0,0,0,0.1)}
-    .btn--primary{background:linear-gradient(90deg,var(--accent),#8bf1ef);color:#003333;box-shadow:0 6px 18px rgba(19,200,194,0.18)}
-    .btn--outline{background:white;color:var(--accent);border:1px solid var(--accent)}
-
-    .socials{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
-    .socials a{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;background:#e6fffd;text-decoration:none;color:#1b8d8b;border:1px solid #c6fffb}
-
-    .contact{margin-top:12px;display:flex;flex-direction:column;gap:8px}
-
-    /* STORY SECTION */
-    section{margin-top:60px;max-width:980px;margin-left:auto;margin-right:auto}
-    .story-section,.slider-section{background:white;padding:28px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,0.07)}
-    .story-section h2,.slider-section h2{font-size:24px;font-weight:700;color:#2d3748;margin-bottom:12px}
-    .story-section p{color:#4a5568;line-height:1.7}
-
-    /* SLIDER */
-    .slider-container{width:100%;overflow:hidden;border-radius:16px;margin-top:16px}
-    .slider-track{display:flex;gap:12px;animation:slide 18s infinite linear}
-    .slider-track img{width:100%;max-width:360px;height:240px;object-fit:cover;border-radius:14px;box-shadow:0 4px 14px rgba(0,0,0,0.12)}
-
-    @keyframes slide{
-      0%{transform:translateX(0)}
-      100%{transform:translateX(-50%)}
-    }
-
-    @media(max-width:720px){
-      .card{grid-template-columns:1fr}
-      .avatar{width:140px;height:140px}
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muh Arfah Awaluddin. T</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- floating bubbles -->
-  <div class="bubble b1"></div>
-  <div class="bubble b2"></div>
-  <div class="bubble b3"></div>
-
-  <div class="container">
-    <div class="card">
-      <div class="avatar-wrap">
-        <div class="avatar"><img src="arfa.jpg" /></div>
-        <p class="name">Muh Arfah Awaluddin. T</p>
-        <p class="role">Web Developer • Laravel & Fullstack</p>
-        <div class="meta">
-          <div class="pill">📍 Sulawesi Selatan</div>
-          <div class="pill">✉️ arfah.tadda54@gmail.com</div>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">Muh Arfah Awaluddin. T</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </div>
-      </div>
+    </nav>
 
-      <div>
-        <p class="bio">Halo — saya Muh Arfah Awaluddin. T, developer web yang fokus pada Laravel dan aplikasi fullstack modern.</p>
-
-        <div class="actions">
-          <a class="btn btn--primary" href="#">Download CV</a>
-          <a class="btn btn--outline" href="mailto:arfah.tadda54@gmail.com">Contact</a>
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="arfa.jpg" alt="Profile Photo">
+            </div>
+            <div class="hero-content">
+                <h1>Muh Arfah Awaluddin. T</h1>
+                <p class="profession">Web Developer • Laravel & Fullstack</p>
+                <p class="description">Halo — saya Muh Arfah Awaluddin. T, developer web yang fokus pada Laravel dan aplikasi fullstack modern.</p>
+                <a href="#" class="btn">Download CV</a>
+            </div>
         </div>
+    </section>
 
-        <div class="socials">
-          <a href="https://github.com/taddaarfah">GH</a>
-          <a href="https://instagram.com/taddaarfah">IG</a>
-        </div>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Saya lahir sebagai anak pertama dari tiga bersaudara di sebuah desa kecil bernama Pabeta, sebuah wilayah tenang di Sulawesi Selatan yang dikelilingi suasana pedesaan dan masyarakat yang masih sangat dekat satu sama lain. Dari tempat sederhana itulah langkah pertama hidup saya dimulai.</p>
 
-        <div class="contact">
-          <a href="tel:+6282292261930">📞 +62 82292261930</a>
-          <a href="mailto:arfah.tadda54@gmail.com">✉️ Email</a>
+            <p>Masa kecil saya sempat dihabiskan di Makassar, tempat saya menjalani pendidikan sekolah dasar hingga kelas dua. Namun perjalanan hidup membawa saya dan keluarga pindah ke Luwu Timur, sebuah daerah yang kemudian menjadi rumah kedua dan tempat saya menamatkan pendidikan hingga SMA. Lingkungan baru itu banyak membentuk karakter saya—lebih mandiri, lebih terbuka, dan lebih siap menatap masa depan.</p>
+
+            <p>Setelah lulus SMA, saya melanjutkan pendidikan di Universitas Negeri Makassar (UNM), memilih jurusan Teknik Informatika dengan fokus kependidikan. Dunia kampus memberi saya banyak ruang untuk berkembang, tidak hanya dalam akademik tetapi juga dalam kepemimpinan dan organisasi. Saya pernah diberi amanah besar sebagai Ketua Umum UKM Paduan Suara Mahasiswa UNM Pinisi Choir pada periode 2021–2022, pengalaman yang mengajarkan saya tentang manajemen, komunikasi, dan bagaimana memimpin dengan hati. Pada masa kepemimpinan tersebut, saya juga berhasil memberangkatkan teman-teman untuk mengikuti The 11th Bali International Choir Festival 2022, dan membawa pulang prestasi membanggakan berupa Gold Medal.</p>
+
+            <p>Di luar kegiatan organisasi, saya juga sempat menjalani magang selama tiga bulan di Dinas Ketenagakerjaan Kota Makassar. Magang tersebut membuka wawasan saya tentang dunia kerja dan memberi gambaran bagaimana teknologi diterapkan dalam pelayanan publik.</p>
+
+            <p>Dari semua materi yang saya pelajari di kampus, bidang jaringan dan pengembangan website adalah yang paling menarik perhatian saya. Perlahan saya mulai lebih mendalami dunia web development, mengikuti proyek-proyek kecil, dan terus belajar dari pengalaman. Minat itu berkembang menjadi keahlian yang kini saya tekuni sepenuh hati. Hingga hari ini, saya terus berupaya meningkatkan skill dan membangun karya yang bermanfaat bagi banyak orang.</p>
+
+            <p>Selain menjalankan berbagai proyek web, saya juga aktif di dunia bisnis digital, khususnya pada bidang gaming. Dari jual beli akun hingga pengelolaan platform digital, saya menjadikannya sebagai ruang eksplorasi baru yang membantu saya berkembang tidak hanya secara teknis, tetapi juga secara bisnis dan manajerial.</p>
+            
         </div>
-      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-laravel"></i>
+                    <h3>Laravel</h3>
+                    <p>PHP framework for web development</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-php"></i>
+                    <h3>PHP</h3>
+                    <p>Server-side scripting language</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-database"></i>
+                    <h3>Database</h3>
+                    <p>Database management and design</p>
+                </div>
+                <div class="skill-item">
+                    <i class="fas fa-palette"></i>
+                    <h3>Adobe Illustrator</h3>
+                    <p>Vector graphics design software</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="education-list">
+                <div class="education-item">
+                    <h3>informatic engineering</h3>
+                    <p class="institution">Universitas Negeri Makassar (UNM)</p>
+                    <p class="year">2019 - 2024</p>
+                    <p>Jurusan Teknik Informatika dengan fokus kependidikan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="project1.png" alt="Project Image 1" class="project-image">
+                    <h3>SISTEM-INFORMASI-PINISI-CHOIR-UNM-</h3>
+                    <details>
+                        <summary>Description</summary>
+                        <p>Aplikasi ini merupakan bagian dari upaya untuk menyelesaikan tugas akhir dalam rangka mengejar gelar Sarjana di Jurusan Teknik Informatika dan Komputer, Universitas Negeri Makassar.</p>
+                    </details>
+                    <a href="https://github.com/taddaarfah/SISTEM-INFORMASI-PINISI-CHOIR-UNM-.git" class="btn">View Demo</a>
+                </div>
+                <div class="project-card">
+                    <img src="project2.png" alt="Project Image 2" class="project-image">
+                    <h3>SISTEM MASJID TERPADU (SIMADU)</h3>
+                    <details>
+                        <summary>Description</summary>
+                        <p>SiMadu adalah aplikasi manajemen masjid berbasis web yang dirancang untuk mengelola keuangan, inventaris, dan laporan secara terstruktur, transparan, dan mudah diakses oleh admin maupun jamaah.</p>
+                    </details>
+                    <a href="https://mni-telkomas.iblogger.org/index.php" class="btn">View Demo</a>
+                </div>
+                <div class="project-card">
+                    <img src="project3.png" alt="Project Image 3" class="project-image">
+                     <h3>SIPERAN – Sistem Informasi Pengunjung Rutan</h3>
+                    <details>
+                        <summary>Description</summary>
+                        <p>Web ini adalah aplikasi berbasis web yang dirancang untuk mempermudah proses pengisian data pengunjung Rutan secara online, menggantikan proses manual, serta mendukung validasi dan verifikasi data secara terstruktur melalui database.</p>
+                    </details>
+                    <a href="https://rutanselayar.wuaze.com/" class="btn">View Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <img src="bg1.jpg" alt="Gallery Image 1" class="gallery-item">
+                <img src="bg2.jpg" alt="Gallery Image 2" class="gallery-item">
+                <img src="bg3.jpg" alt="Gallery Image 3" class="gallery-item">
+                <img src="bg4.jpg" alt="Gallery Image 4" class="gallery-item">
+                <img src="bg5.jpg" alt="Gallery Image 5" class="gallery-item">
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for Gallery -->
+    <div id="modal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
-  </div>
 
-  <!-- STORY SECTION -->
-  <section class="story-section">
-    <h2>Kisah Hidup Saya</h2>
-    <p>
-      Saya lahir sebagai anak pertama dari tiga bersaudara di sebuah desa kecil bernama Pabeta, sebuah wilayah tenang di Sulawesi Selatan yang dikelilingi suasana pedesaan dan masyarakat yang masih sangat dekat satu sama lain. Dari tempat sederhana itulah langkah pertama hidup saya dimulai.
-    </p>
-    <p>
-      Masa kecil saya sempat dihabiskan di Makassar, tempat saya menjalani pendidikan sekolah dasar hingga kelas dua. Namun perjalanan hidup membawa saya dan keluarga pindah ke Luwu Timur, sebuah daerah yang kemudian menjadi rumah kedua dan tempat saya menamatkan pendidikan hingga SMA. Lingkungan baru itu banyak membentuk karakter saya—lebih mandiri, lebih terbuka, dan lebih siap menatap masa depan.
-    </p>
-    <p>
-      Setelah lulus SMA, saya melanjutkan pendidikan di Universitas Negeri Makassar (UNM), memilih jurusan Teknik Informatika dengan fokus kependidikan. Dunia kampus memberi saya banyak ruang untuk berkembang, tidak hanya dalam akademik tetapi juga dalam kepemimpinan dan organisasi. Saya pernah diberi amanah besar sebagai Ketua Umum UKM Paduan Suara Mahasiswa UNM Pinisi Choir pada periode 2021–2022, pengalaman yang mengajarkan saya tentang manajemen, komunikasi, dan bagaimana memimpin dengan hati. Pada masa kepemimpinan tersebut, saya juga berhasil memberangkatkan teman-teman untuk mengikuti The 11th Bali International Choir Festival 2022, dan membawa pulang prestasi membanggakan berupa Gold Medal.
-    </p>
-    <p>
-      Di luar kegiatan organisasi, saya juga sempat menjalani magang selama tiga bulan di Dinas Ketenagakerjaan Kota Makassar. Magang tersebut membuka wawasan saya tentang dunia kerja dan memberi gambaran bagaimana teknologi diterapkan dalam pelayanan publik.
-    </p>
-    <p>
-      Dari semua materi yang saya pelajari di kampus, bidang jaringan dan pengembangan website adalah yang paling menarik perhatian saya. Perlahan saya mulai lebih mendalami dunia web development, mengikuti proyek-proyek kecil, dan terus belajar dari pengalaman. Minat itu berkembang menjadi keahlian yang kini saya tekuni sepenuh hati. Hingga hari ini, saya terus berupaya meningkatkan skill dan membangun karya yang bermanfaat bagi banyak orang.
-    </p>
-    <p>
-      Selain menjalankan berbagai proyek web, saya juga aktif di dunia bisnis digital, khususnya pada bidang gaming. Dari jual beli akun hingga pengelolaan platform digital, saya menjadikannya sebagai ruang eksplorasi baru yang membantu saya berkembang tidak hanya secara teknis, tetapi juga secara bisnis dan manajerial.
-    </p>
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <p><strong>Email:</strong> arfah.tadda54@gmail.com</p>
+                <p><strong>Phone:</strong> +62 82292261930</p>
+                <p><strong>Location:</strong>📍Sulawesi Selatan</p>
+            </div>
+            <div class="social-media">
+                <a href="#" class="social-link">LinkedIn</a>
+                <a href="https://github.com/taddaarfah" class="social-link">GitHub</a>
+                <a href="#" class="social-link">Twitter</a>
+                <a href="#" class="social-link">Instagram</a>
+            </div>
+        </div>
+    </section>
 
-  <!-- SLIDER SECTION -->
-  <section class="slider-section">
-    <h2>Galeri Foto</h2>
-    <div class="slider-container">
-      <div class="slider-track">
-        <img src="bg1.jpg" />
-        <img src="bg2.jpg" />
-        <img src="bg3.jpg" />
-        <img src="bg4.jpg" />
-        <img src="bg5.jpg" />
-      </div>
-    </div>
-  </section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Muh Arfah Awaluddin. T. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>

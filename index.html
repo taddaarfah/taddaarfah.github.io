@@ -3,9 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>taddaarfah — Web Developer & Entrepreneur</title>
+<title>Muh. Arfah Awaluddin. T — Web Developer & Entrepreneur</title>
+<link rel="icon" type="image/png" href="banggon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne+Mono&family=Bricolage+Grotesque:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
@@ -558,6 +561,24 @@ footer{
 .stop.visible{opacity:1;visibility:visible;}
 .stop:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 rgba(245,230,66,0.3);}
 
+/* ─ EMPTY PROJECT SLOTS ─ */
+.proj-img-placeholder{
+  background:var(--surface2);
+  border-bottom:1px dashed var(--border2);
+  display:flex;align-items:center;justify-content:center;
+}
+.proj-empty{
+  border-style:dashed;
+  opacity:.7;
+}
+.proj-empty:hover{opacity:1;}
+.empty-ph{
+  display:flex;flex-direction:column;align-items:center;gap:.6rem;
+  font-family:var(--font-mono);font-size:.65rem;
+  color:var(--muted2);letter-spacing:.08em;text-transform:uppercase;
+  position:relative;z-index:2;
+}
+
 /* ─ HAMBURGER ─ */
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:none;padding:4px;}
 .hamburger span{width:22px;height:1.5px;background:var(--yellow);transition:all .3s;}
@@ -650,7 +671,7 @@ footer{
         <div class="hero-stats">
           <div class="hstat"><div class="hstat-val">5+</div><div class="hstat-key">Years Exp</div></div>
           <div class="hstat"><div class="hstat-val">20+</div><div class="hstat-key">Projects</div></div>
-          <div class="hstat"><div class="hstat-val">50+</div><div class="hstat-key">Clients</div></div>
+          <div class="hstat"><div class="hstat-val">20+</div><div class="hstat-key">Clients</div></div>
           <div class="hstat"><div class="hstat-val">100%</div><div class="hstat-key">Committed</div></div>
         </div>
       </div>
@@ -658,7 +679,7 @@ footer{
       <div class="hero-card-wrap">
         <div class="card-badge">available for work</div>
         <div class="profile-card">
-          <div class="deco-tag">taddaarfah.dev</div>
+          <div class="deco-tag">taddaarfah</div>
           <img src="banggon.png" alt="Muh Arfah Awaluddin" class="profile-img"
                onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop&crop=face'">
           <div class="glass-info">
@@ -693,43 +714,43 @@ footer{
     <h2 class="s-title">Skills &amp; <em>Expertise</em></h2>
     <div class="skills-grid">
       <div class="sk-card"><span class="sk-num">01</span>
-        <div class="sk-icon" style="background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.2);">🔴</div>
+        <div class="sk-icon" style="background:rgba(248,83,83,.1);border:1px solid rgba(248,83,83,.2);"><i class="devicon-laravel-plain" style="color:#f05340;font-size:1.4rem;"></i></div>
         <div class="sk-name">Laravel</div><div class="sk-desc">PHP framework for robust web apps</div>
       </div>
       <div class="sk-card"><span class="sk-num">02</span>
-        <div class="sk-icon" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);">🔵</div>
+        <div class="sk-icon" style="background:rgba(119,123,180,.1);border:1px solid rgba(119,123,180,.2);"><i class="devicon-php-plain" style="color:#777bb4;font-size:1.4rem;"></i></div>
         <div class="sk-name">PHP</div><div class="sk-desc">Server-side scripting language</div>
       </div>
       <div class="sk-card"><span class="sk-num">03</span>
-        <div class="sk-icon" style="background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.2);">🟢</div>
-        <div class="sk-name">Database</div><div class="sk-desc">MySQL &amp; PostgreSQL design</div>
+        <div class="sk-icon" style="background:rgba(0,116,173,.1);border:1px solid rgba(0,116,173,.2);"><i class="devicon-mysql-plain" style="color:#0074ad;font-size:1.4rem;"></i></div>
+        <div class="sk-name">MySQL / DB</div><div class="sk-desc">MySQL &amp; PostgreSQL design</div>
       </div>
       <div class="sk-card"><span class="sk-num">04</span>
-        <div class="sk-icon" style="background:rgba(245,230,66,.1);border:1px solid rgba(245,230,66,.2);">🟡</div>
+        <div class="sk-icon" style="background:rgba(255,154,0,.1);border:1px solid rgba(255,154,0,.2);"><i class="fa-brands fa-adobe" style="color:#ff9a00;font-size:1.4rem;"></i></div>
         <div class="sk-name">Illustrator</div><div class="sk-desc">Professional vector graphics</div>
       </div>
       <div class="sk-card"><span class="sk-num">05</span>
-        <div class="sk-icon" style="background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);">🟠</div>
+        <div class="sk-icon" style="background:rgba(228,77,38,.1);border:1px solid rgba(228,77,38,.2);"><i class="devicon-html5-plain" style="color:#e44d26;font-size:1.4rem;"></i></div>
         <div class="sk-name">HTML5</div><div class="sk-desc">Semantic markup language</div>
       </div>
       <div class="sk-card"><span class="sk-num">06</span>
-        <div class="sk-icon" style="background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);">💙</div>
+        <div class="sk-icon" style="background:rgba(21,114,182,.1);border:1px solid rgba(21,114,182,.2);"><i class="devicon-css3-plain" style="color:#1572b6;font-size:1.4rem;"></i></div>
         <div class="sk-name">CSS3</div><div class="sk-desc">Advanced styling &amp; animations</div>
       </div>
       <div class="sk-card"><span class="sk-num">07</span>
-        <div class="sk-icon" style="background:rgba(234,179,8,.1);border:1px solid rgba(234,179,8,.2);">⭐</div>
+        <div class="sk-icon" style="background:rgba(240,219,79,.1);border:1px solid rgba(240,219,79,.2);"><i class="devicon-javascript-plain" style="color:#f0db4f;font-size:1.4rem;"></i></div>
         <div class="sk-name">JavaScript</div><div class="sk-desc">Interactive web development</div>
       </div>
       <div class="sk-card"><span class="sk-num">08</span>
-        <div class="sk-icon" style="background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);">💜</div>
+        <div class="sk-icon" style="background:rgba(168,85,247,.1);border:1px solid rgba(168,85,247,.2);"><i class="fa-solid fa-chart-column" style="color:#a855f7;font-size:1.2rem;"></i></div>
         <div class="sk-name">Data Analysis</div><div class="sk-desc">Interpretation &amp; visualization</div>
       </div>
       <div class="sk-card"><span class="sk-num">09</span>
-        <div class="sk-icon" style="background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);">📊</div>
+        <div class="sk-icon" style="background:rgba(0,114,239,.1);border:1px solid rgba(0,114,239,.2);"><i class="fa-brands fa-microsoft" style="color:#0072ef;font-size:1.3rem;"></i></div>
         <div class="sk-name">Microsoft 365</div><div class="sk-desc">Office productivity suite</div>
       </div>
       <div class="sk-card"><span class="sk-num">10</span>
-        <div class="sk-icon" style="background:rgba(100,116,139,.1);border:1px solid rgba(100,116,139,.2);">🌐</div>
+        <div class="sk-icon" style="background:rgba(100,116,139,.1);border:1px solid rgba(100,116,139,.2);"><i class="fa-solid fa-network-wired" style="color:#94a3b8;font-size:1.2rem;"></i></div>
         <div class="sk-name">Mikrotik</div><div class="sk-desc">Network config &amp; management</div>
       </div>
     </div>
@@ -868,7 +889,64 @@ footer{
           <p>Sistem transaksi toko gaming: manajemen produk, tracking penjualan, laporan keuangan &amp; analisis performa bisnis.</p>
           <div class="proj-foot">
             <a href="http://taddastore.my.id/" class="proj-link" target="_blank">↗ live demo</a>
-            <span class="proj-index">08 / 08</span>
+            <span class="proj-index">08 / 11</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOT 09 — ganti gambar & teks sesuai proyek baru -->
+      <div class="proj-card proj-empty">
+        <div class="proj-img-wrap proj-img-placeholder">
+          <div class="empty-ph">
+            <i class="fa-solid fa-plus" style="font-size:1.8rem;color:rgba(245,230,66,0.3);"></i>
+            <span>Upload project image here</span>
+          </div>
+          <div class="proj-chips"><span class="chip">— coming soon</span></div>
+        </div>
+        <div class="proj-body">
+          <h3 style="color:var(--muted2);">Project Title Here</h3>
+          <p>Deskripsi proyek singkat ditambahkan di sini.</p>
+          <div class="proj-foot">
+            <span class="proj-link dim">— link here</span>
+            <span class="proj-index">09 / 11</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOT 10 — ganti gambar & teks sesuai proyek baru -->
+      <div class="proj-card proj-empty">
+        <div class="proj-img-wrap proj-img-placeholder">
+          <div class="empty-ph">
+            <i class="fa-solid fa-plus" style="font-size:1.8rem;color:rgba(245,230,66,0.3);"></i>
+            <span>Upload project image here</span>
+          </div>
+          <div class="proj-chips"><span class="chip">— coming soon</span></div>
+        </div>
+        <div class="proj-body">
+          <h3 style="color:var(--muted2);">Project Title Here</h3>
+          <p>Deskripsi proyek singkat ditambahkan di sini.</p>
+          <div class="proj-foot">
+            <span class="proj-link dim">— link here</span>
+            <span class="proj-index">10 / 11</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLOT 11 — ganti gambar & teks sesuai proyek baru -->
+      <div class="proj-card proj-empty">
+        <div class="proj-img-wrap proj-img-placeholder">
+          <div class="empty-ph">
+            <i class="fa-solid fa-plus" style="font-size:1.8rem;color:rgba(245,230,66,0.3);"></i>
+            <span>Upload project image here</span>
+          </div>
+          <div class="proj-chips"><span class="chip">— coming soon</span></div>
+        </div>
+        <div class="proj-body">
+          <h3 style="color:var(--muted2);">Project Title Here</h3>
+          <p>Deskripsi proyek singkat ditambahkan di sini.</p>
+          <div class="proj-foot">
+            <span class="proj-link dim">— link here</span>
+            <span class="proj-index">11 / 11</span>
           </div>
         </div>
       </div>
@@ -884,17 +962,12 @@ footer{
   <div class="container">
     <div class="s-label">education.log</div>
     <h2 class="s-title">Academic <em>Journey</em></h2>
-    <div class="edu-grid">
+    <div class="edu-grid" style="grid-template-columns:1fr;">
       <div class="edu-card">
         <div class="edu-year">2019 — 2024</div>
         <h3>Informatic Engineering</h3>
         <div class="edu-inst">// Universitas Negeri Makassar (UNM)</div>
         <p class="edu-desc">Teknik Informatika, fokus kependidikan. Kompetensi dalam pengembangan perangkat lunak, sistem informasi &amp; teknologi pembelajaran.</p>
-      </div>
-      <div class="ach-card">
-        <div class="ach-tag">🥇 GOLD MEDAL</div>
-        <h3>The 11th Bali International Choir Festival 2022</h3>
-        <p class="ach-desc">Sebagai Ketua Umum UKM Paduan Suara Mahasiswa UNM Pinisi Choir periode 2021–2022, memimpin tim meraih Gold Medal di ajang internasional bergengsi ini.</p>
       </div>
     </div>
   </div>
@@ -998,7 +1071,7 @@ footer{
   <div class="foot-inner">
     <div class="foot-logo">taddaarfah</div>
     <p class="foot-text">&copy; 2025 Muh Arfah Awaluddin. T</p>
-    <p class="foot-text">Built with ❤ &amp; pure HTML</p>
+    <p class="foot-text">meronga.web.idL</p>
   </div>
 </footer>
 

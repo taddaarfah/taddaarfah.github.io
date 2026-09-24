@@ -2,270 +2,253 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Muh. Arfah Awaluddin T | Web Developer & Trainer</title>
-<meta name="description" content="Portofolio Muh. Arfah Awaluddin T — Web Developer & Trainer Pemrograman dari Sulawesi Selatan.">
+<meta name="description" content="Portofolio Muh. Arfah Awaluddin T — Web Developer, VPS/Server & Trainer Pemrograman dari Sulawesi Selatan.">
 <link rel="icon" href="photokuy.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#e8ebef;--ink:#13151a;--mute:#5d6470;--line:#c9cfd8;--card:#f4f6f8;--blue:#2947ff;--d:'Bricolage Grotesque',Impact,sans-serif;--b:'Figtree',system-ui,sans-serif}
+:root{--bg:#eee3c6;--ink:#1d4733;--soft:#4f6b5c;--amber:#e8a23a;--card:#f6eed9;--line:rgba(29,71,51,.22);--d:'Space Grotesk',sans-serif;--m:'JetBrains Mono',monospace;--b:'Inter',sans-serif}
 html{scroll-behavior:smooth}
-body{font-family:var(--b);background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden}
+body{font-family:var(--b);color:var(--ink);line-height:1.65;overflow-x:hidden;background-color:var(--bg);background-image:linear-gradient(rgba(29,71,51,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(29,71,51,.06) 1px,transparent 1px);background-size:44px 44px}
 a{color:inherit;text-decoration:none}
-:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
-section{padding:6.5rem 2rem;position:relative}
-.wrap{max-width:1180px;margin:0 auto}
-h2{font-family:var(--d);font-weight:800;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1;letter-spacing:-.03em;margin-bottom:.8rem}
-.sub{color:var(--mute);max-width:52ch;margin-bottom:2.8rem}
-.tag{font-size:.74rem;padding:.25rem .65rem;border:1px solid var(--line);border-radius:99px;background:var(--card);color:var(--mute)}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+section{padding:6.5rem 2rem;position:relative;z-index:1}
+.wrap{max-width:1140px;margin:0 auto}
+h2{font-family:var(--d);font-weight:700;font-size:clamp(2.3rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.02em}
+.hl{background:linear-gradient(transparent 68%,var(--amber) 68%,var(--amber) 92%,transparent 92%);padding:0 .1em}
+.sub{font-family:var(--m);font-size:.82rem;color:var(--soft);margin:.9rem 0 2.6rem;max-width:62ch}
+.tag{font:500 .7rem var(--m);padding:.22rem .6rem;border:1.5px solid var(--ink);background:var(--card)}
+.btn{display:inline-block;font:700 .8rem var(--m);padding:.8rem 1.4rem;border:2px solid var(--ink);background:var(--card);transition:background .2s,color .2s,transform .2s;cursor:pointer}
+.btn:hover{background:var(--amber);transform:translate(-2px,-2px);box-shadow:3px 3px 0 var(--ink)}
+.btn.fill{background:var(--ink);color:var(--card)}.btn.fill:hover{background:var(--amber);color:var(--ink)}
+.btn.off{opacity:.45;pointer-events:none}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 2rem;background:rgba(232,235,239,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.logo{font-family:var(--d);font-weight:800;letter-spacing:-.02em}
-.links{display:flex;gap:1.6rem;list-style:none;font-size:.82rem;font-weight:500;letter-spacing:.06em}
-.links a{color:var(--mute);transition:color .2s}.links a:hover,.links a.on{color:var(--blue)}
-.lang{display:flex;border:1px solid var(--ink);border-radius:99px;overflow:hidden}
-.lang button{font:600 .72rem var(--b);border:0;background:none;padding:.3rem .7rem;cursor:pointer;color:var(--ink)}
-.lang button.on{background:var(--ink);color:var(--bg)}
-.burger{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer}
+/* circuit decoration */
+.ckt{position:fixed;top:0;bottom:0;width:90px;z-index:0;pointer-events:none;opacity:.5}
+.ckt.r{right:0;transform:scaleX(-1)}
+.ckt svg{width:100%;height:100%}
 
-/* HERO */
-.hero{min-height:100vh;padding:0;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
-.rows{position:absolute;inset:50% 0 auto;transform:translateY(-50%);z-index:0;display:flex;flex-direction:column;gap:.1rem;pointer-events:none;user-select:none}
-.row{display:flex;white-space:nowrap;font-family:var(--d);font-weight:800;font-size:clamp(4.5rem,15vw,13rem);line-height:.9;letter-spacing:-.04em;color:transparent;-webkit-text-stroke:1.5px var(--line);animation:slide 40s linear infinite}
-.row:nth-child(even){animation-direction:reverse;color:var(--card);-webkit-text-stroke:0}
+/* nav */
+nav{position:fixed;top:.9rem;left:50%;transform:translateX(-50%);z-index:60;background:var(--bg);border:2px solid var(--ink);display:flex;max-width:calc(100vw - 2rem)}
+nav a{font:500 .76rem var(--m);letter-spacing:.08em;padding:.55rem 1rem;margin:.28rem;white-space:nowrap;transition:background .2s}
+nav a:hover{background:rgba(232,162,58,.4)}nav a.on{background:var(--amber)}
+.lang{position:fixed;top:.9rem;right:1.4rem;z-index:60;display:flex;border:2px solid var(--ink);background:var(--bg)}
+.lang button{font:700 .74rem var(--m);border:0;background:none;padding:.5rem .7rem;cursor:pointer;color:var(--ink)}
+.lang button.on{background:var(--amber)}
+
+/* hero */
+.hero{min-height:100vh;display:grid;align-items:center;overflow:hidden;padding-top:6rem}
+.rows{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;pointer-events:none;user-select:none;opacity:.9}
+.row{display:flex;width:max-content;font-family:var(--d);font-weight:700;font-size:clamp(4rem,13vw,11rem);line-height:1;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1.5px rgba(29,71,51,.16);animation:slide 45s linear infinite;white-space:nowrap}
+.row:nth-child(2){animation-direction:reverse}
 .row span{padding-right:3rem}
 @keyframes slide{to{transform:translateX(-50%)}}
-.hero-in{position:relative;z-index:2;display:grid;place-items:center;text-align:center;padding:6rem 2rem 3rem}
-.photo-3d{perspective:1200px}
-.photo{width:min(300px,68vw);aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:160px 160px 14px 14px;border:6px solid var(--bg);
-  transform:rotate3d(1,-1,0,10deg);
-  box-shadow:0 1px 0 1px var(--ink),14px 16px 0 -2px var(--card),16px 18px 0 -1px var(--ink),30px 34px 0 var(--blue),30px 34px 40px rgba(19,21,26,.35);
-  transition:transform .5s ease}
-.photo-3d:hover .photo{transform:rotate3d(1,-1,0,3deg) translateY(-4px)}
-.role{font-family:var(--d);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.5rem);margin-top:2.6rem}
-.hero-cta{display:flex;gap:.7rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap}
-.btn{font:600 .88rem var(--b);padding:.8rem 1.5rem;border-radius:99px;border:1px solid var(--ink);transition:transform .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-2px)}
-.btn.fill{background:var(--ink);color:var(--bg)}.btn.fill:hover{background:var(--blue);border-color:var(--blue)}
+.hero-in{position:relative;text-align:center;display:grid;justify-items:center}
+.photo{width:min(290px,68vw);aspect-ratio:4/5;object-fit:cover;object-position:top;border:3px solid var(--ink);box-shadow:14px 14px 0 var(--amber);background:var(--card)}
+.role{font-family:var(--d);font-weight:700;font-size:clamp(1.3rem,3vw,2rem);margin-top:2.4rem;letter-spacing:-.01em}
+.loc{font:400 .8rem var(--m);color:var(--soft);margin-top:.2rem}
+.hero-cta{display:flex;gap:.8rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap}
 
-/* ABOUT */
-.about-p{font-family:var(--d);font-weight:600;font-size:clamp(1.3rem,2.7vw,2rem);line-height:1.3;letter-spacing:-.01em;max-width:30em;margin-bottom:3rem}
-.core{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.core div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1.6rem}
-.core small{font:600 .72rem var(--b);color:var(--blue);letter-spacing:.08em}
-.core h3{font-family:var(--d);font-size:1.25rem;margin:.5rem 0 .4rem;line-height:1.15}
-.core p{font-size:.9rem;color:var(--mute)}
+/* about + cards */
+.about-p{font-size:clamp(1.05rem,1.8vw,1.28rem);max-width:46em;color:var(--ink);margin-bottom:2.6rem}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{background:var(--card);border:2px solid var(--ink);padding:1.6rem;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--amber)}
+.card small{font:700 .72rem var(--m);color:var(--amber);background:var(--ink);padding:.15rem .5rem}
+.card h3{font-family:var(--d);font-size:1.3rem;line-height:1.2;margin:.9rem 0 .5rem}
+.card p{font-size:.9rem;color:var(--soft)}
+.card .tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
 
-/* CAPABILITIES */
-#cap{background:var(--ink);color:var(--bg)}
-#cap .sub{color:#9aa2af}
-.stacks{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.stack{border:1px solid #333944;border-radius:14px;padding:2rem}
-.stack h3{font-family:var(--d);font-size:1.6rem;margin-bottom:.4rem}
-.stack p{color:#9aa2af;font-size:.92rem;margin-bottom:1.3rem}
-.stack .tags{display:flex;flex-wrap:wrap;gap:.45rem}
-.stack .tag{background:transparent;border-color:#454c59;color:#dfe3ea}
-.tools{margin:3rem -2rem -6.5rem;border-top:1px solid #333944;overflow:hidden;padding:1.4rem 0}
-.tools div{display:flex;width:max-content;animation:slide 30s linear infinite}
-.tools span{display:flex;align-items:center;gap:.5rem;font-family:var(--d);font-weight:800;font-size:1.6rem;padding:0 1.6rem;color:#454c59;white-space:nowrap}
-.tools span:nth-child(3n){color:var(--blue)}
-.tools span i{font-size:1.3rem;font-style:normal}
+/* capabilities */
+#cap{background:var(--ink);color:var(--card);background-image:linear-gradient(rgba(238,227,198,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(238,227,198,.05) 1px,transparent 1px);background-size:44px 44px}
+#cap .sub{color:#b7c8bb}
+#cap .card{background:rgba(238,227,198,.06);border-color:var(--amber);color:var(--card)}
+#cap .card:hover{box-shadow:5px 5px 0 var(--amber)}
+#cap .card p{color:#b7c8bb;margin-top:1.1rem}
+#cap .tag{background:transparent;border-color:rgba(238,227,198,.5);color:var(--card)}
+.chead{display:flex;align-items:center;gap:1rem}
+.chead h3{margin:0!important;color:var(--amber)}
+.ico{width:48px;height:48px;flex:none;border:2px solid var(--amber);display:grid;place-items:center;color:var(--amber)}
+.ico svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.num{margin-left:auto;font:700 1.8rem var(--m);color:rgba(232,162,58,.4)}
+.tools{margin:3.2rem -2rem -6.5rem;border-top:2px solid rgba(232,162,58,.55);overflow:hidden;padding:.4rem 0}
+.trk{display:flex;width:max-content;animation:slide 40s linear infinite;padding:.8rem 0}
+.trk.rev{animation-direction:reverse}
+.trk+.trk{border-top:1px solid rgba(238,227,198,.2)}
+.tl{display:grid;justify-items:center;gap:.4rem;padding:0 1.6rem;font:500 .7rem var(--m);color:#b7c8bb}
+.tl img{width:34px;height:34px;object-fit:contain}
 
-/* WORK */
-.viewer{display:grid;grid-template-columns:300px 1fr;gap:1.2rem;align-items:start}
-.plist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
-.plist button{font:500 .92rem var(--b);text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:.85rem .4rem;cursor:pointer;color:var(--mute);display:flex;gap:.8rem;transition:color .2s,padding .2s}
-.plist button b{font-family:var(--d);color:var(--line);font-weight:800;min-width:1.7rem}
-.plist button:hover{color:var(--ink)}
-.plist button.on{color:var(--ink);padding-left:1rem;box-shadow:inset 3px 0 var(--blue)}
-.plist button.on b{color:var(--blue)}
-.stage{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;position:sticky;top:5rem}
-.shot{aspect-ratio:16/9;background:linear-gradient(135deg,var(--blue),#13151a);display:grid;place-items:center;color:#fff;font-family:var(--d);font-weight:800;font-size:1.6rem;overflow:hidden}
-.shot img{width:100%;height:100%;object-fit:cover;object-position:top}
-.info{padding:1.6rem 1.8rem 1.9rem}
-.info small{color:var(--blue);font-weight:600;font-size:.76rem;letter-spacing:.08em}
-.info h3{font-family:var(--d);font-size:1.7rem;letter-spacing:-.02em;line-height:1.1;margin:.3rem 0 .7rem}
-.info p{color:var(--mute);margin-bottom:1rem;max-width:60ch}
-.info .tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1.3rem}
-.info .btn.off{opacity:.5;pointer-events:none}
-.pn{display:flex;gap:.5rem;margin-top:1.4rem}
-.pn button{width:42px;height:42px;border-radius:50%;border:1px solid var(--ink);background:none;font-size:1.1rem;cursor:pointer;transition:background .2s,color .2s}
-.pn button:hover{background:var(--ink);color:var(--bg)}
+/* work coverflow */
+.work-head{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem}
+.pn{display:flex;gap:.7rem;padding-top:.6rem}
+.pn button{width:46px;height:46px;border:2px solid var(--ink);background:var(--bg);font-size:1.2rem;cursor:pointer;color:var(--ink);transition:background .2s}
+.pn button:hover{background:var(--amber)}
+.stage{--w:min(500px,76vw);position:relative;height:calc(var(--w)*.5625 + 3rem);margin-top:1.5rem;overflow:hidden}
+.slide{position:absolute;left:50%;top:1.2rem;width:var(--w);aspect-ratio:16/9;border:2px solid var(--ink);background:linear-gradient(135deg,var(--ink),#2d6a4c);cursor:pointer;transition:transform .55s cubic-bezier(.2,.8,.2,1),opacity .4s,filter .4s;display:grid;place-items:center;color:var(--card);font:700 1.3rem var(--d);text-align:center;padding:1rem}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top}
+.slide[data-d="0"]{transform:translateX(-50%);z-index:3;border:3px solid var(--amber);box-shadow:0 18px 40px rgba(29,71,51,.35)}
+.slide[data-d="-1"]{transform:translateX(-112%) scale(.72) rotate(-4deg);z-index:2;opacity:.75;filter:saturate(.7)}
+.slide[data-d="1"]{transform:translateX(12%) scale(.72) rotate(4deg);z-index:2;opacity:.75;filter:saturate(.7)}
+.slide[data-d="x"]{transform:translateX(-50%) scale(.5);opacity:0;pointer-events:none}
+.view{position:absolute;left:50%;bottom:.55rem;transform:translateX(-50%);z-index:4;font:500 .64rem var(--m);background:var(--card);border:1px solid var(--ink);padding:.15rem .6rem;letter-spacing:.06em}
+.pinfo{text-align:center;max-width:680px;margin:1rem auto 0}
+.pinfo h3{font-family:var(--d);font-size:clamp(1.5rem,3vw,2.1rem);letter-spacing:-.01em;line-height:1.15}
+.pinfo p{color:var(--soft);margin:.7rem 0 1rem}
+.pinfo .tags{display:flex;gap:.4rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.4rem}
+.modal{position:fixed;inset:0;background:rgba(15,32,24,.92);z-index:100;display:none;place-items:center;padding:2rem}
+.modal.on{display:grid}
+.modal img{max-width:min(1100px,94vw);max-height:84vh;border:3px solid var(--amber)}
+.modal button{position:absolute;top:1.2rem;right:1.2rem;width:44px;height:44px;border:2px solid var(--card);background:none;color:var(--card);font-size:1.1rem;cursor:pointer}
 
-/* JOURNEY */
-#journey{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.jgroup{margin-bottom:3rem}
-.jgroup:last-child{margin-bottom:0}
-.jgroup>h3{font-family:var(--d);font-weight:800;font-size:1.1rem;color:var(--blue);margin-bottom:.4rem}
-.j{display:grid;grid-template-columns:150px 1fr;gap:2rem;padding:1.8rem 0;border-top:1px solid var(--line)}
-.jgroup>.j:first-of-type{border-top:1px solid var(--ink)}
-.j time{font-family:var(--d);font-weight:800;font-size:1.5rem;letter-spacing:-.02em}
-.j h3{font-family:var(--d);font-size:1.4rem;line-height:1.15}
-.j em{display:block;font-style:normal;color:var(--blue);font-weight:600;font-size:.88rem;margin:.2rem 0 .6rem}
-.j p{color:var(--mute);max-width:64ch;font-size:.94rem}
-.final-project{display:flex;gap:1.2rem;align-items:center;margin-top:1rem;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:1rem}
-.final-project img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--ink);flex-shrink:0}
-.final-project div small{color:var(--blue);font-weight:600;font-size:.72rem;letter-spacing:.06em}
-.final-project div p{margin:.15rem 0 0;font-size:.88rem;max-width:none}
+/* awards */
+.aw{display:grid;grid-template-columns:1fr 1.1fr;gap:3.5rem;align-items:center}
+.yr{font:700 .72rem var(--m);background:var(--amber);padding:.15rem .6rem}
+.aw h3{font-family:var(--d);font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.1;margin:.9rem 0 .4rem}
+.aw h4{font:500 1rem var(--m);background:var(--ink);color:var(--card);width:fit-content;padding:.1rem .6rem;margin-bottom:.9rem}
+.aw p{color:var(--soft);max-width:44ch;margin-bottom:1.4rem}
+.aw .pn{padding:0}
+.aw-p{position:relative}
+.aw-p::before,.aw-p::after{content:'';position:absolute;inset:0;background:var(--ink);border:2px solid var(--ink)}
+.aw-p::before{transform:rotate(3deg)}
+.aw-p::after{transform:rotate(-2deg) translateY(8px);opacity:.6}
+.aw-p img{position:relative;z-index:1;display:block;width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border:3px solid var(--ink);background:linear-gradient(135deg,var(--ink),#2d6a4c);cursor:zoom-in}
 
-/* CONTACT */
-#contact{padding-bottom:3rem}
-.big{font-family:var(--d);font-weight:800;font-size:clamp(3rem,10vw,8.5rem);line-height:.92;letter-spacing:-.045em;margin-bottom:2rem}
-.big span{color:var(--blue)}
-.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--ink);margin-top:3rem}
-.cgrid a{display:flex;justify-content:space-between;gap:1rem;padding:1.3rem .2rem;border-bottom:1px solid var(--line);transition:padding .2s,color .2s}
-.cgrid a:hover{color:var(--blue);padding-left:1rem}
-.cgrid small{color:var(--mute);font-size:.75rem;letter-spacing:.08em;display:block}
-.cgrid b{font-weight:600}
-footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.78rem;color:var(--mute)}
+/* journey */
+.j{display:grid;grid-template-columns:170px 1fr;gap:2rem;padding:1.6rem 0;border-top:2px solid var(--line)}
+.j time{font:700 .9rem var(--m);color:var(--soft)}
+.j h3{font-family:var(--d);font-size:1.4rem;line-height:1.2}
+.j em{display:block;font:500 .82rem var(--m);font-style:normal;color:var(--ink);background:rgba(232,162,58,.55);width:fit-content;padding:.05rem .5rem;margin:.4rem 0 .6rem}
+.j p{color:var(--soft);max-width:64ch;font-size:.94rem}
 
-@media(max-width:900px){
-  .core,.stacks,.cgrid{grid-template-columns:1fr}
-  .viewer{grid-template-columns:1fr}.stage{position:static;order:-1}
-  .plist{display:grid;grid-template-columns:1fr 1fr}
-  .j{grid-template-columns:1fr;gap:.4rem}
-  .final-project{flex-direction:column;text-align:center}
-}
+/* contact */
+.big{font-family:var(--d);font-weight:700;font-size:clamp(2.8rem,9vw,7rem);line-height:1;letter-spacing:-.03em;margin-bottom:1.4rem}
+.cgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin-top:2.6rem}
+.cgrid a{display:flex;justify-content:space-between;gap:1rem;padding:1.1rem 1.3rem;background:var(--card);border:2px solid var(--ink);transition:transform .2s,box-shadow .2s,background .2s}
+.cgrid a:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--amber)}
+.cgrid small{display:block;font:500 .68rem var(--m);color:var(--soft);letter-spacing:.08em}
+.cgrid b{font:600 .88rem var(--m);word-break:break-all}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margin-top:4rem;padding-top:1.3rem;border-top:2px solid var(--line);font:400 .74rem var(--m);color:var(--soft)}
+
+@media(max-width:900px){.grid3,.cgrid,.aw{grid-template-columns:1fr}.aw{gap:2.5rem}.j{grid-template-columns:1fr;gap:.3rem}.ckt{display:none}}
 @media(max-width:768px){
-  section{padding:4.5rem 1.2rem}nav{padding:.8rem 1.2rem}
-  .burger{display:block}
-  .links{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg);padding:1rem 1.2rem;border-bottom:1px solid var(--line)}
-  .links.open{display:flex}
+  section{padding:4.5rem 1.2rem}
+  nav{left:.8rem;right:.8rem;transform:none;overflow-x:auto;max-width:none;scrollbar-width:none}
+  .lang{top:4rem;right:.8rem}
+  .hero{padding-top:8rem}
   .tools{margin-inline:-1.2rem}
+  .work-head{flex-direction:column}
 }
-@media(prefers-reduced-motion:reduce){.row,.tools div{animation:none}html{scroll-behavior:auto}.photo{transition:none}}
+@media(prefers-reduced-motion:reduce){.row,.trk{animation:none}.slide{transition:none}html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
+<div class="ckt" aria-hidden="true"><svg viewBox="0 0 90 800" preserveAspectRatio="xMinYMin slice" fill="none" stroke="#1d4733" stroke-width="1.5"><path d="M22 0V150H50V330H14V520H44V800M62 200V420H80V640"/><g fill="#1d4733"><circle cx="22" cy="150" r="3.5"/><circle cx="50" cy="330" r="3.5"/><circle cx="14" cy="520" r="3.5"/><circle cx="62" cy="200" r="3.5"/><circle cx="80" cy="640" r="3.5"/></g></svg></div>
+<div class="ckt r" aria-hidden="true"><svg viewBox="0 0 90 800" preserveAspectRatio="xMinYMin slice" fill="none" stroke="#1d4733" stroke-width="1.5"><path d="M30 0V220H60V400H20V610H48V800M70 120V300H84V700"/><g fill="#1d4733"><circle cx="30" cy="220" r="3.5"/><circle cx="60" cy="400" r="3.5"/><circle cx="20" cy="610" r="3.5"/><circle cx="70" cy="120" r="3.5"/><circle cx="84" cy="700" r="3.5"/></g></svg></div>
+
 <nav>
-  <a href="#home" class="logo">ARFAH.T</a>
-  <ul class="links" id="links">
-    <li><a href="#home" data-en="HOME">HOME</a></li>
-    <li><a href="#about" data-en="ABOUT">TENTANG</a></li>
-    <li><a href="#cap" data-en="CAPABILITIES">KEAHLIAN</a></li>
-    <li><a href="#work" data-en="WORK">PROYEK</a></li>
-    <li><a href="#journey" data-en="JOURNEY">PERJALANAN</a></li>
-    <li><a href="#contact" data-en="CONTACT">KONTAK</a></li>
-  </ul>
-  <div style="display:flex;gap:.6rem;align-items:center">
-    <div class="lang"><button data-l="id" class="on">ID</button><button data-l="en">EN</button></div>
-    <button class="burger" id="burger" aria-label="Menu">☰</button>
-  </div>
+  <a href="#home" class="on">HOME</a><a href="#about">ABOUT</a><a href="#cap">CAPABILITIES</a><a href="#work">WORK</a><a href="#award">PRESTASI</a><a href="#journey">JOURNEY</a><a href="#contact">CONTACT</a>
 </nav>
+<div class="lang"><button data-l="id" class="on">ID</button><button data-l="en">EN</button></div>
 
 <section id="home" class="hero">
   <div class="rows" aria-hidden="true">
     <div class="row"><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span></div>
     <div class="row"><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span></div>
-    <div class="row"><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span></div>
   </div>
   <div class="hero-in">
-    <div class="photo-3d"><img class="photo" src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T"></div>
+    <img class="photo" src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T">
     <p class="role">Web Developer &amp; Trainer</p>
+    <p class="loc">// Sulawesi Selatan, ID</p>
     <div class="hero-cta">
-      <a href="#work" class="btn fill" data-en="See projects">Lihat proyek</a>
-      <a href="#contact" class="btn" data-en="Get in touch">Hubungi saya</a>
+      <a href="#work" class="btn fill" data-en="$ see projects">$ lihat proyek</a>
+      <a href="#contact" class="btn" data-en="$ get in touch">$ hubungi saya</a>
     </div>
   </div>
 </section>
 
 <section id="about">
   <div class="wrap">
-    <h2 data-en="About me">Tentang saya</h2>
-    <p class="about-p" data-en="Web developer and programming trainer from South Sulawesi. I build web apps with Laravel &amp; PHP, teach Web Programming at Screenesia, and teach Informatics at Al Mubarak Cendekia Islamic School.">Web developer dan trainer pemrograman dari Sulawesi Selatan. Saya membangun aplikasi web dengan Laravel &amp; PHP, melatih peserta Web Programming di Screenesia, dan mengajar Informatika di Al Mubarak Cendekia Islamic School.</p>
-    <div class="core">
-      <div><small>CORE_01</small><h3 data-en="Web Application Development">Pengembangan Aplikasi Web</h3><p data-en="Information systems from database design to deployment — for schools, mosques, government and small businesses." >Sistem informasi dari desain basis data hingga deploy — untuk sekolah, masjid, instansi, dan usaha kecil.</p></div>
-      <div><small>CORE_02</small><h3 data-en="Teaching &amp; Training">Mengajar &amp; Melatih</h3><p data-en="Hands-on, project-based web programming classes for beginners to intermediate learners.">Kelas pemrograman web berbasis proyek dan praktik langsung, dari pemula hingga menengah.</p></div>
-      <div><small>CORE_03</small><h3 data-en="VPS &amp; Server Deployment">VPS &amp; Deploy Server</h3><p data-en="Building and managing Virtual Private Servers — deployment, configuration and uptime for live web apps.">Membangun dan mengelola Virtual Private Server (VPS) — deploy, konfigurasi, hingga menjaga uptime aplikasi web yang live.</p></div>
+    <h2 data-en="About <span class='hl'>Me</span>">Tentang <span class="hl">Saya</span></h2>
+    <p class="sub" data-en="// who I am and what I do">// siapa saya dan apa yang saya kerjakan</p>
+    <p class="about-p" data-en="Web developer and programming trainer from South Sulawesi. I build web apps with Laravel &amp; PHP, set up and run my own servers on a VPS, teach Web Programming at Screenesia, and teach Informatics at Al Mubarak Cendekia Islamic School.">Web developer dan trainer pemrograman dari Sulawesi Selatan. Saya membangun aplikasi web dengan Laravel &amp; PHP, menyiapkan dan mengelola server sendiri di VPS, melatih peserta Web Programming di Screenesia, dan mengajar Informatika di Al Mubarak Cendekia Islamic School.</p>
+    <div class="grid3">
+      <div class="card"><small>CORE_01</small><h3 data-en="Web Application Development">Pengembangan Aplikasi Web</h3><p data-en="Information systems from database design to deployment — for schools, mosques, government and small businesses.">Sistem informasi dari desain basis data hingga deploy — untuk sekolah, masjid, instansi, dan usaha kecil.</p></div>
+      <div class="card"><small>CORE_02</small><h3 data-en="Teaching &amp; Training">Mengajar &amp; Melatih</h3><p data-en="Hands-on, project-based web programming classes for beginners to intermediate learners.">Kelas pemrograman web berbasis proyek dan praktik langsung, dari pemula hingga menengah.</p></div>
+      <div class="card"><small>CORE_03</small><h3 data-en="VPS &amp; Server Setup">VPS &amp; Membangun Server</h3><p data-en="Building servers on a Virtual Private Server (VPS) — setup, configuration and deploying web apps so they run online.">Membangun server di VPS (Virtual Private Server) — instalasi, konfigurasi, dan deploy aplikasi web agar berjalan online.</p></div>
     </div>
   </div>
 </section>
 
 <section id="cap">
   <div class="wrap">
-    <h2 data-en="What I can do">Yang bisa saya kerjakan</h2>
-    <p class="sub" data-en="Two stacks: building web systems, and the tools that support them.">Dua sisi: membangun sistem web, dan alat pendukung di sekitarnya.</p>
-    <div class="stacks">
-      <div class="stack">
-        <h3>Web Development</h3>
-        <p data-en="Solid, maintainable web apps on the PHP ecosystem.">Aplikasi web yang solid dan mudah dirawat di ekosistem PHP.</p>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">REST API</span></div>
-      </div>
-      <div class="stack">
-        <h3 data-en="Design, Server &amp; Teaching">Desain, Server &amp; Mengajar</h3>
-        <p data-en="Supporting skills for delivering complete digital solutions.">Keahlian pendukung untuk solusi digital yang utuh.</p>
-        <div class="tags"><span class="tag">Adobe Illustrator</span><span class="tag">Microsoft 365</span><span class="tag">VPS / Server</span><span class="tag">Linux</span><span class="tag">Curriculum design</span><span class="tag">Code review</span></div>
-      </div>
+    <h2 data-en="What I <span class='hl' style='color:var(--ink)'>Can Do</span>">Yang Bisa <span class="hl" style="color:var(--ink)">Saya Kerjakan</span></h2>
+    <p class="sub" data-en="// from writing the code to putting it on a server">// dari menulis kode sampai menaruhnya di server</p>
+    <div class="grid3">
+      <div class="card"><div class="chead"><span class="ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span><h3>Web Development</h3><span class="num">01</span></div><p data-en="Solid, maintainable web apps on the PHP ecosystem.">Aplikasi web yang solid dan mudah dirawat di ekosistem PHP.</p><div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">REST API</span></div></div>
+      <div class="card"><div class="chead"><span class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1"/><rect x="3" y="14" width="18" height="6" rx="1"/><path d="M7 7h.01M7 17h.01"/></svg></span><h3>VPS &amp; Server</h3><span class="num">02</span></div><p data-en="Build a server from scratch on a VPS and deploy apps onto it.">Membangun server dari nol di VPS lalu men-deploy aplikasi ke dalamnya.</p><div class="tags"><span class="tag">VPS</span><span class="tag">Virtual Private Server</span><span class="tag">Server Setup</span><span class="tag">Deployment</span><span class="tag">Mikrotik</span></div></div>
+      <div class="card"><div class="chead"><span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><h3 data-en="Design &amp; Teaching">Desain &amp; Mengajar</h3><span class="num">03</span></div><p data-en="Supporting skills for delivering complete digital solutions.">Keahlian pendukung untuk solusi digital yang utuh.</p><div class="tags"><span class="tag">Adobe Illustrator</span><span class="tag">Microsoft 365</span><span class="tag">Curriculum design</span><span class="tag">Code review</span></div></div>
     </div>
-    <div class="tools" aria-hidden="true"><div>
-      <span><i>▲</i>Laravel</span><span><i>🐘</i>PHP</span><span><i>🐬</i>MySQL</span><span><i>🟨</i>JavaScript</span><span><i>🌐</i>HTML5</span><span><i>🎨</i>CSS3</span><span><i>🖥️</i>VPS</span><span><i>🐧</i>Linux</span>
-      <span><i>▲</i>Laravel</span><span><i>🐘</i>PHP</span><span><i>🐬</i>MySQL</span><span><i>🟨</i>JavaScript</span><span><i>🌐</i>HTML5</span><span><i>🎨</i>CSS3</span><span><i>🖥️</i>VPS</span><span><i>🐧</i>Linux</span>
-    </div></div>
+    <div class="tools" id="tools" aria-hidden="true"></div>
   </div>
 </section>
 
 <section id="work">
   <div class="wrap">
-    <h2 data-en="Selected work">Proyek pilihan</h2>
-    <p class="sub" data-en="Web systems for education, religious, government and business needs.">Sistem web untuk kebutuhan pendidikan, keagamaan, instansi, dan bisnis.</p>
-    <div class="viewer">
-      <div class="plist" id="plist"></div>
-      <div class="stage">
-        <div class="shot" id="shot"></div>
-        <div class="info">
-          <small id="pcount"></small>
-          <h3 id="ptitle"></h3>
-          <p id="pdesc"></p>
-          <div class="tags" id="ptags"></div>
-          <a class="btn fill" id="plink" target="_blank" rel="noopener"></a>
-          <div class="pn"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
-        </div>
+    <div class="work-head">
+      <div>
+        <h2 data-en="Work <span class='hl'>Gallery</span>">Galeri <span class="hl">Proyek</span></h2>
+        <p class="sub" id="pcount"></p>
       </div>
+      <div class="pn"><button id="prev" aria-label="Previous">←</button><button id="next" aria-label="Next">→</button></div>
+    </div>
+    <div class="stage" id="stage"></div>
+    <div class="pinfo">
+      <h3 id="ptitle"></h3>
+      <p id="pdesc"></p>
+      <div class="tags" id="ptags"></div>
+      <a class="btn fill" id="plink" target="_blank" rel="noopener"></a>
+    </div>
+  </div>
+</section>
+
+<section id="award">
+  <div class="wrap">
+    <h2 data-en="Awards &amp; <span class='hl'>Achievements</span>">Penghargaan &amp; <span class="hl">Prestasi</span></h2>
+    <p class="sub" data-en="// academic and professional recognition.">// pengakuan akademik dan profesional.</p>
+    <div class="aw">
+      <div>
+        <span class="yr" id="ayr"></span>
+        <h3 id="atitle"></h3>
+        <h4 id="aorg"></h4>
+        <p id="adesc"></p>
+        <div class="pn"><button id="aprev" aria-label="Previous">←</button><button id="anext" aria-label="Next">→</button></div>
+      </div>
+      <div class="aw-p"><img id="aimg" alt="" onerror="this.style.visibility='hidden'"></div>
     </div>
   </div>
 </section>
 
 <section id="journey">
   <div class="wrap">
-    <h2 data-en="Journey">Perjalanan</h2>
-    <p class="sub" data-en="Work, organization and study so far.">Pekerjaan, organisasi, dan pendidikan sejauh ini.</p>
-
-    <div class="jgroup">
-      <h3 data-en="WORK EXPERIENCE">PENGALAMAN KERJA</h3>
-      <div class="j"><time>2026</time><div><h3>Trainer Web Programming</h3><em>Screenesia</em><p data-en="Teaching HTML, CSS, JavaScript, PHP and Laravel through hands-on projects, from curriculum to final web app deployment.">Mengajar HTML, CSS, JavaScript, PHP, dan Laravel lewat proyek langsung — dari penyusunan kurikulum sampai deploy web app akhir.</p></div></div>
-      <div class="j"><time>2026</time><div><h3 data-en="Informatics Teacher">Guru Informatika</h3><em>Al Mubarak Cendekia Islamic School</em><p data-en="Teaching computer basics, programming logic and digital literacy in an applied way.">Mengajar dasar komputer, logika pemrograman, dan literasi digital dengan pendekatan aplikatif.</p></div></div>
-    </div>
-
-    <div class="jgroup">
-      <h3 data-en="ORGANIZATION EXPERIENCE">PENGALAMAN ORGANISASI</h3>
-      <div class="j"><time>2022</time><div><h3 data-en="Gold Medal">Medali Emas</h3><em>Pinisi Choir</em><p data-en="Gold medal achievement with Pinisi Choir.">Meraih medali emas bersama Pinisi Choir.</p></div></div>
-    </div>
-
-    <div class="jgroup">
-      <h3 data-en="EDUCATION">PENDIDIKAN</h3>
-      <div class="j"><time>2019 — 2024</time><div><h3 data-en="B.Sc. Informatics Engineering">S1 Teknik Informatika</h3><em>Universitas Negeri Makassar</em><p data-en="Education-focused informatics degree.">Teknik Informatika kependidikan.</p>
-        <div class="final-project">
-          <img src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T">
-          <div>
-            <small data-en="FINAL PROJECT">TUGAS AKHIR</small>
-            <p data-en="Sistem Informasi Pinisi Choir UNM — a web-based information system for the Pinisi Choir organization, built with Laravel.">Sistem Informasi Pinisi Choir UNM — sistem informasi organisasi paduan suara berbasis web, dibangun dengan Laravel.</p>
-          </div>
-        </div>
-      </div></div>
-    </div>
+    <h2 data-en="My <span class='hl'>Journey</span>">Perjalanan <span class="hl">Saya</span></h2>
+    <p class="sub" data-en="// work, study and recognition so far">// pekerjaan, pendidikan, dan penghargaan sejauh ini</p>
+    <div class="j"><time>2026 — NOW</time><div><h3>Trainer Web Programming</h3><em>Screenesia</em><p data-en="Teaching HTML, CSS, JavaScript, PHP and Laravel through hands-on projects, from curriculum to final web app deployment.">Mengajar HTML, CSS, JavaScript, PHP, dan Laravel lewat proyek langsung — dari penyusunan kurikulum sampai deploy web app akhir.</p></div></div>
+    <div class="j"><time>2026 — NOW</time><div><h3 data-en="Informatics Teacher">Guru Informatika</h3><em>Al Mubarak Cendekia Islamic School</em><p data-en="Teaching computer basics, programming logic and digital literacy in an applied way.">Mengajar dasar komputer, logika pemrograman, dan literasi digital dengan pendekatan aplikatif.</p></div></div>
+    <div class="j"><time>2022</time><div><h3 data-en="Gold Medal">Medali Emas</h3><em>Pinisi Choir</em><p data-en="Gold medal achievement with Pinisi Choir.">Meraih medali emas bersama Pinisi Choir.</p></div></div>
+    <div class="j"><time>2019 — 2024</time><div><h3 data-en="B.Sc. Informatics Engineering">S1 Teknik Informatika</h3><em>Universitas Negeri Makassar</em><p data-en="Education-focused informatics. Thesis: a web-based information system for the Pinisi Choir UNM organization built with Laravel.">Teknik Informatika kependidikan. Tugas akhir: sistem informasi organisasi paduan suara Pinisi Choir UNM berbasis web dengan Laravel.</p></div></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="wrap">
-    <div class="big" data-en="Let's build<br>something <span>together</span>">Ayo bangun<br>sesuatu <span>bersama</span></div>
-    <p class="sub" data-en="Open to freelance work, project collaboration and discussions about web development and digital business.">Terbuka untuk freelance, kolaborasi proyek, dan diskusi seputar web development &amp; bisnis digital.</p>
-    <a href="#" class="btn fill" data-en="Download CV">Unduh CV</a>
+    <div class="big" data-en="Let's build<br>something <span class='hl'>together</span>">Ayo bangun<br>sesuatu <span class="hl">bersama</span></div>
+    <p class="sub" data-en="// open to freelance work, project collaboration and discussions about web development and digital business.">// terbuka untuk freelance, kolaborasi proyek, dan diskusi seputar web development &amp; bisnis digital.</p>
+    <a href="#" class="btn fill" data-en="↓ download CV">↓ unduh CV</a>
     <div class="cgrid">
       <a href="mailto:arfah.tadda54@gmail.com"><span><small>EMAIL</small><b>arfah.tadda54@gmail.com</b></span><span>↗</span></a>
       <a href="https://wa.me/6282292261930" target="_blank" rel="noopener"><span><small>WHATSAPP</small><b>+62 822-9226-1930</b></span><span>↗</span></a>
@@ -277,53 +260,97 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
   </div>
 </section>
 
+<div class="modal" id="modal"><button aria-label="Close">✕</button><img id="mimg" alt=""></div>
+
 <script>
 const P=[
-["Sistem Informasi Pinisi Choir UNM","Manajemen anggota, jadwal, keuangan & dokumentasi organisasi paduan suara. Proyek tugas akhir dengan Laravel.","Member, schedule, finance & documentation management for a choir organization. Final-year project built with Laravel.",["Laravel","MySQL"],"https://github.com/taddaarfah/SISTEM-INFORMASI-PINISI-CHOIR-UNM-.git","GitHub","project1.png"],
-["TAD AI — Intelligent Assistant","Platform asisten virtual berbasis GPT untuk menjawab pertanyaan, rekomendasi, analisis data & otomasi bisnis.","GPT-based virtual assistant for Q&A, recommendations, data analysis and business automation.",["AI","GPT"],"https://aibytad.free.nf/","Live demo","project8.png"],
+["Sistem Informasi Pinisi Choir UNM","Manajemen anggota, jadwal, keuangan & dokumentasi organisasi paduan suara. Proyek tugas akhir dengan Laravel.","Member, schedule, finance & documentation management for a choir organization. Final-year project built with Laravel.",["Laravel","MySQL"],"https://github.com/taddaarfah/SISTEM-INFORMASI-PINISI-CHOIR-UNM-.git","GitHub ↗","project1.png"],
+["TAD AI — Intelligent Assistant","Platform asisten virtual berbasis GPT untuk menjawab pertanyaan, rekomendasi, analisis data & otomasi bisnis.","GPT-based virtual assistant for Q&A, recommendations, data analysis and business automation.",["AI","GPT"],"https://aibytad.free.nf/","Live demo ↗","project8.png"],
 ["Aimskilful — IELTS Placement Test","Tes penempatan IELTS berbasis web dengan penilaian otomatis untuk Listening, Reading, Writing & Speaking.","Web-based IELTS placement test with automatic scoring for Listening, Reading, Writing & Speaking.",["Education","IELTS"],null,"In progress","project7.png"],
-["SIMADU — Sistem Masjid Terpadu","Manajemen masjid: keuangan, inventaris, jadwal & pelaporan transparan real-time untuk admin & jamaah.","Mosque management: finance, inventory, schedules and transparent real-time reporting.",["Finance","Mosque"],"https://mni-telkomas.iblogger.org/index.php","Live demo","project2.png"],
-["SIPERAN — Pengunjung Rutan","Digitalisasi pencatatan pengunjung Rumah Tahanan dengan form online, validasi otomatis & database terstruktur.","Digital visitor logging for a detention center with online forms, auto-validation and a structured database.",["Government","Database"],"https://rutanselayar.wuaze.com/","Live demo","project3.png"],
-["Ponbites Profile","Landing page untuk Ponbites Cheesecuit Dessert.","Landing page for Ponbites Cheesecuit Dessert.",["Landing page"],"https://ponbites.my.id/","Live demo","project12.png"],
-["SIP-SLB — Profil Sekolah Luar Biasa","Website profil SLB: program pendidikan, galeri, pengumuman & pendaftaran siswa baru online (PPDB).","School profile site: programs, gallery, announcements and online new-student registration.",["Education","School"],"https://slb-laketu.page.gd/","Live demo","project5.png"],
-["SiPenTa — Penjualan Tadda Store","Sistem transaksi toko gaming: produk, tracking penjualan, laporan keuangan & analisis performa bisnis.","Gaming store transaction system: products, sales tracking, financial reports and performance analysis.",["POS","Gaming"],"http://taddastore.my.id/","Live demo","project6.png"],
-["AYOQUIZ — Smart Quiz Platform","Kuis web dengan algoritma acak — 10 soal dari 66 bank soal, mode latihan & kuis, review nilai instan.","Web quiz with a randomizing algorithm — 10 questions from a 66-item bank, practice and quiz modes, instant review.",["Quiz","Algorithm"],"https://meronga.web.id/","Visit website","project9.jpg"],
+["SIMADU — Sistem Masjid Terpadu","Manajemen masjid: keuangan, inventaris, jadwal & pelaporan transparan real-time untuk admin & jamaah.","Mosque management: finance, inventory, schedules and transparent real-time reporting.",["Finance","Mosque"],"https://mni-telkomas.iblogger.org/index.php","Live demo ↗","project2.png"],
+["SIPERAN — Pengunjung Rutan","Digitalisasi pencatatan pengunjung Rumah Tahanan dengan form online, validasi otomatis & database terstruktur.","Digital visitor logging for a detention center with online forms, auto-validation and a structured database.",["Government","Database"],"https://rutanselayar.wuaze.com/","Live demo ↗","project3.png"],
+["Ponbites Profile","Landing page untuk Ponbites Cheesecuit Dessert.","Landing page for Ponbites Cheesecuit Dessert.",["Landing page"],"https://ponbites.my.id/","Live demo ↗","project12.png"],
+["SIP-SLB — Profil Sekolah Luar Biasa","Website profil SLB: program pendidikan, galeri, pengumuman & pendaftaran siswa baru online (PPDB).","School profile site: programs, gallery, announcements and online new-student registration.",["Education","School"],"https://slb-laketu.page.gd/","Live demo ↗","project5.png"],
+["SiPenTa — Penjualan Tadda Store","Sistem transaksi toko gaming: produk, tracking penjualan, laporan keuangan & analisis performa bisnis.","Gaming store transaction system: products, sales tracking, financial reports and performance analysis.",["POS","Gaming"],"http://taddastore.my.id/","Live demo ↗","project6.png"],
+["AYOQUIZ — Smart Quiz Platform","Kuis web dengan algoritma acak — 10 soal dari 66 bank soal, mode latihan & kuis, review nilai instan.","Web quiz with a randomizing algorithm — 10 questions from a 66-item bank, practice and quiz modes, instant review.",["Quiz","Algorithm"],"https://meronga.web.id/","Visit website ↗","project9.jpg"],
 ["Inventaris Lab Komputer Sekolah","Manajemen inventaris untuk sekolah — kontrol aset, status ketersediaan & jadwal pemeliharaan rutin.","School inventory management — asset control, availability status and routine maintenance schedules.",["Inventory","School"],null,"In progress","project10.jpg"],
 ["Masjid Jami Nurul Taqwa Pabeta","Digitalisasi administrasi masjid — jadwal shalat, laporan donasi, konfirmasi WhatsApp & jadwal kegiatan.","Mosque administration — prayer times, donation reports, WhatsApp confirmation and weekly events.",["Mosque","Donation"],null,"In progress","project11.jpg"]
 ];
-let lang='id',cur=0;
-const $=id=>document.getElementById(id),pad=n=>String(n+1).padStart(2,'0');
-$('plist').innerHTML=P.map((p,i)=>`<button data-i="${i}"><b>${pad(i)}</b>${p[0].split(' — ')[0]}</button>`).join('');
+const $=id=>document.getElementById(id),N=P.length,pad=n=>String(n+1).padStart(2,'0');
+let lang='id',cur=Math.floor(N/2)-1;
+const stage=$('stage');
+stage.innerHTML=P.map((p,i)=>`<div class="slide" data-i="${i}" role="button" tabindex="0" aria-label="${p[0]}"><span>${p[0].split(' — ')[0]}</span><img src="${p[6]}" alt="${p[0]}" loading="lazy" onerror="this.remove()"><span class="view" hidden>TAP TO VIEW LARGER</span></div>`).join('');
+const slides=[...stage.children];
 function show(i){
-  cur=(i+P.length)%P.length;const p=P[cur];
-  document.querySelectorAll('#plist button').forEach((b,k)=>b.classList.toggle('on',k===cur));
-  $('pcount').textContent='PROJ_'+pad(cur)+' / '+String(P.length).padStart(2,'0');
+  cur=(i+N)%N;const p=P[cur];
+  slides.forEach((s,k)=>{let d=k-cur;if(d>N/2)d-=N;if(d<-N/2)d+=N;s.dataset.d=Math.abs(d)>1?'x':d;s.querySelector('.view').hidden=d!==0});
+  $('pcount').textContent=(lang==='en'?'// A selection of web systems — ':'// Pilihan sistem web — ')+'PROJ_'+pad(cur)+' of '+String(N).padStart(2,'0');
   $('ptitle').textContent=p[0];
   $('pdesc').textContent=lang==='en'?p[2]:p[1];
   $('ptags').innerHTML=p[3].map(t=>`<span class="tag">${t}</span>`).join('');
-  const l=$('plink');l.textContent=p[5]+(p[4]?' ↗':'');
+  const l=$('plink');l.textContent=p[5];
   if(p[4]){l.href=p[4];l.classList.remove('off')}else{l.removeAttribute('href');l.classList.add('off')}
-  const s=$('shot');s.innerHTML='';
-  const im=new Image();im.alt=p[0];im.src=p[6];
-  im.onerror=()=>{s.textContent=p[0].split(' — ')[0]};
-  s.appendChild(im);
 }
-$('plist').onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)};
+stage.onclick=e=>{
+  const s=e.target.closest('.slide');if(!s)return;
+  const i=+s.dataset.i;
+  if(i!==cur)return show(i);
+  const im=s.querySelector('img');if(im){$('mimg').src=im.src;$('modal').classList.add('on')}
+};
+stage.onkeydown=e=>{if(e.key==='Enter'&&e.target.classList.contains('slide'))e.target.click()};
 $('prev').onclick=()=>show(cur-1);$('next').onclick=()=>show(cur+1);
+addEventListener('keydown',e=>{
+  if(e.key==='Escape')$('modal').classList.remove('on');
+  if($('modal').classList.contains('on'))return;
+  const r=$('work').getBoundingClientRect();
+  if(r.top<innerHeight&&r.bottom>0){if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)}
+});
+$('modal').onclick=()=>$('modal').classList.remove('on');
+
+/* tool logos (devicon CDN — edit the list to taste) */
+const D='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/';
+const T=[
+ [["Laravel","laravel/laravel-original"],["PHP","php/php-original"],["MySQL","mysql/mysql-original"],["PostgreSQL","postgresql/postgresql-original"],["JavaScript","javascript/javascript-original"],["HTML5","html5/html5-original"],["CSS3","css3/css3-original"],["Git","git/git-original"]],
+ [["Linux","linux/linux-original"],["Ubuntu","ubuntu/ubuntu-original"],["Nginx","nginx/nginx-original"],["Illustrator","illustrator/illustrator-plain"]]
+];
+$('tools').innerHTML=T.map((r,k)=>{
+  const half=Array.from({length:Math.ceil(12/r.length)},()=>r).flat();
+  return `<div class="trk${k?' rev':''}">`+[...half,...half].map(([n,p])=>`<div class="tl"><img src="${D+p}.svg" alt="" loading="lazy" onerror="this.remove()"><span>${n}</span></div>`).join('')+'</div>';
+}).join('');
+
+/* awards */
+const A=[
+ {y:"2024",t:["Proyek Akhir Skripsi","Final Thesis Project"],o:"Universitas Negeri Makassar",
+  d:["Sistem informasi organisasi paduan suara Pinisi Choir UNM berbasis web: manajemen anggota, jadwal, keuangan & dokumentasi, dibangun dengan Laravel.","Web-based information system for the Pinisi Choir UNM organization: member, schedule, finance & documentation management, built with Laravel."],
+  i:"project1.png"},
+ {y:"2022",t:["Medali Emas","Gold Medal"],o:"Pinisi Choir",
+  d:["Meraih medali emas bersama Pinisi Choir.","Gold medal achievement with Pinisi Choir."],
+  i:"medali.jpg"} /* ganti dengan foto medalimu, atau hapus objek ini */
+];
+let ai=0;
+function showA(i){
+  ai=(i+A.length)%A.length;const a=A[ai],l=lang==='en'?1:0;
+  $('ayr').textContent=a.y;$('atitle').textContent=a.t[l];$('aorg').textContent=a.o;$('adesc').textContent=a.d[l];
+  const im=$('aimg');im.style.visibility='visible';im.src=a.i;
+}
+$('aprev').onclick=()=>showA(ai-1);$('anext').onclick=()=>showA(ai+1);
+$('aimg').onclick=e=>{$('mimg').src=e.target.src;$('modal').classList.add('on')};
 
 document.querySelectorAll('[data-en]').forEach(e=>e.dataset.id=e.innerHTML);
 document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>{
   lang=b.dataset.l;document.documentElement.lang=lang;
   document.querySelectorAll('.lang button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('[data-en]').forEach(e=>e.innerHTML=lang==='en'?e.dataset.en:e.dataset.id);
-  show(cur);
+  show(cur);showA(ai);
 });
-$('burger').onclick=()=>$('links').classList.toggle('open');
-$('links').onclick=()=>$('links').classList.remove('open');
 
-const secs=[...document.querySelectorAll('section[id]')],navs=[...document.querySelectorAll('.links a')];
-addEventListener('scroll',()=>{let c='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-160)c=s.id});navs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+c))},{passive:true});
-show(0);
+let tx=0;
+stage.addEventListener('touchstart',e=>tx=e.touches[0].clientX,{passive:true});
+stage.addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)show(cur+(d<0?1:-1))});
+
+const secs=[...document.querySelectorAll('section[id]')],navs=[...document.querySelectorAll('nav a')];
+addEventListener('scroll',()=>{let c='home';secs.forEach(s=>{if(scrollY>=s.offsetTop-180)c=s.id});navs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+c))},{passive:true});
+show(cur);showA(0);
 </script>
 </body>
 </html>

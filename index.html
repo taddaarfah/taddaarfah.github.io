@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Muh. Arfah Awaluddin T | Web Developer & Trainer</title>
 <meta name="description" content="Portofolio Muh. Arfah Awaluddin T — Web Developer & Trainer Pemrograman dari Sulawesi Selatan.">
 <link rel="icon" href="photokuy.jpeg">
@@ -40,8 +40,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .row span{padding-right:3rem}
 @keyframes slide{to{transform:translateX(-50%)}}
 .hero-in{position:relative;z-index:2;display:grid;place-items:center;text-align:center;padding:6rem 2rem 3rem}
-.photo{width:min(300px,68vw);aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:160px 160px 14px 14px;border:6px solid var(--bg);box-shadow:0 0 0 1px var(--ink),18px 18px 0 var(--blue)}
-.role{font-family:var(--d);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.5rem);margin-top:2.4rem}
+.photo-3d{perspective:1200px}
+.photo{width:min(300px,68vw);aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:160px 160px 14px 14px;border:6px solid var(--bg);
+  transform:rotate3d(1,-1,0,10deg);
+  box-shadow:0 1px 0 1px var(--ink),14px 16px 0 -2px var(--card),16px 18px 0 -1px var(--ink),30px 34px 0 var(--blue),30px 34px 40px rgba(19,21,26,.35);
+  transition:transform .5s ease}
+.photo-3d:hover .photo{transform:rotate3d(1,-1,0,3deg) translateY(-4px)}
+.role{font-family:var(--d);font-weight:600;font-size:clamp(1.05rem,2.2vw,1.5rem);margin-top:2.6rem}
 .hero-cta{display:flex;gap:.7rem;justify-content:center;margin-top:1.4rem;flex-wrap:wrap}
 .btn{font:600 .88rem var(--b);padding:.8rem 1.5rem;border-radius:99px;border:1px solid var(--ink);transition:transform .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-2px)}
@@ -64,10 +69,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 .stack p{color:#9aa2af;font-size:.92rem;margin-bottom:1.3rem}
 .stack .tags{display:flex;flex-wrap:wrap;gap:.45rem}
 .stack .tag{background:transparent;border-color:#454c59;color:#dfe3ea}
-.tools{margin:3rem -2rem -6.5rem;border-top:1px solid #333944;overflow:hidden;padding:1.2rem 0}
+.tools{margin:3rem -2rem -6.5rem;border-top:1px solid #333944;overflow:hidden;padding:1.4rem 0}
 .tools div{display:flex;width:max-content;animation:slide 30s linear infinite}
-.tools span{font-family:var(--d);font-weight:800;font-size:1.6rem;padding:0 1.6rem;color:#454c59;white-space:nowrap}
+.tools span{display:flex;align-items:center;gap:.5rem;font-family:var(--d);font-weight:800;font-size:1.6rem;padding:0 1.6rem;color:#454c59;white-space:nowrap}
 .tools span:nth-child(3n){color:var(--blue)}
+.tools span i{font-size:1.3rem;font-style:normal}
 
 /* WORK */
 .viewer{display:grid;grid-template-columns:300px 1fr;gap:1.2rem;align-items:start}
@@ -92,12 +98,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:cent
 
 /* JOURNEY */
 #journey{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.jgroup{margin-bottom:3rem}
+.jgroup:last-child{margin-bottom:0}
+.jgroup>h3{font-family:var(--d);font-weight:800;font-size:1.1rem;color:var(--blue);margin-bottom:.4rem}
 .j{display:grid;grid-template-columns:150px 1fr;gap:2rem;padding:1.8rem 0;border-top:1px solid var(--line)}
-.j:first-of-type{border-top:1px solid var(--ink)}
+.jgroup>.j:first-of-type{border-top:1px solid var(--ink)}
 .j time{font-family:var(--d);font-weight:800;font-size:1.5rem;letter-spacing:-.02em}
 .j h3{font-family:var(--d);font-size:1.4rem;line-height:1.15}
 .j em{display:block;font-style:normal;color:var(--blue);font-weight:600;font-size:.88rem;margin:.2rem 0 .6rem}
 .j p{color:var(--mute);max-width:64ch;font-size:.94rem}
+.final-project{display:flex;gap:1.2rem;align-items:center;margin-top:1rem;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:1rem}
+.final-project img{width:64px;height:64px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--ink);flex-shrink:0}
+.final-project div small{color:var(--blue);font-weight:600;font-size:.72rem;letter-spacing:.06em}
+.final-project div p{margin:.15rem 0 0;font-size:.88rem;max-width:none}
 
 /* CONTACT */
 #contact{padding-bottom:3rem}
@@ -115,6 +128,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
   .viewer{grid-template-columns:1fr}.stage{position:static;order:-1}
   .plist{display:grid;grid-template-columns:1fr 1fr}
   .j{grid-template-columns:1fr;gap:.4rem}
+  .final-project{flex-direction:column;text-align:center}
 }
 @media(max-width:768px){
   section{padding:4.5rem 1.2rem}nav{padding:.8rem 1.2rem}
@@ -123,7 +137,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
   .links.open{display:flex}
   .tools{margin-inline:-1.2rem}
 }
-@media(prefers-reduced-motion:reduce){.row,.tools div{animation:none}html{scroll-behavior:auto}}
+@media(prefers-reduced-motion:reduce){.row,.tools div{animation:none}html{scroll-behavior:auto}.photo{transition:none}}
 </style>
 </head>
 <body>
@@ -151,7 +165,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
     <div class="row"><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span><span>MUH. ARFAH A.T</span></div>
   </div>
   <div class="hero-in">
-    <img class="photo" src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T">
+    <div class="photo-3d"><img class="photo" src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T"></div>
     <p class="role">Web Developer &amp; Trainer</p>
     <div class="hero-cta">
       <a href="#work" class="btn fill" data-en="See projects">Lihat proyek</a>
@@ -167,7 +181,7 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
     <div class="core">
       <div><small>CORE_01</small><h3 data-en="Web Application Development">Pengembangan Aplikasi Web</h3><p data-en="Information systems from database design to deployment — for schools, mosques, government and small businesses." >Sistem informasi dari desain basis data hingga deploy — untuk sekolah, masjid, instansi, dan usaha kecil.</p></div>
       <div><small>CORE_02</small><h3 data-en="Teaching &amp; Training">Mengajar &amp; Melatih</h3><p data-en="Hands-on, project-based web programming classes for beginners to intermediate learners.">Kelas pemrograman web berbasis proyek dan praktik langsung, dari pemula hingga menengah.</p></div>
-      <div><small>CORE_03</small><h3 data-en="Network &amp; Design">Jaringan &amp; Desain</h3><p data-en="Mikrotik network configuration and vector design with Adobe Illustrator.">Konfigurasi jaringan Mikrotik dan desain grafis vektor dengan Adobe Illustrator.</p></div>
+      <div><small>CORE_03</small><h3 data-en="VPS &amp; Server Deployment">VPS &amp; Deploy Server</h3><p data-en="Building and managing Virtual Private Servers — deployment, configuration and uptime for live web apps.">Membangun dan mengelola Virtual Private Server (VPS) — deploy, konfigurasi, hingga menjaga uptime aplikasi web yang live.</p></div>
     </div>
   </div>
 </section>
@@ -183,14 +197,14 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
         <div class="tags"><span class="tag">Laravel</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">REST API</span></div>
       </div>
       <div class="stack">
-        <h3 data-en="Design, Network &amp; Teaching">Desain, Jaringan &amp; Mengajar</h3>
+        <h3 data-en="Design, Server &amp; Teaching">Desain, Server &amp; Mengajar</h3>
         <p data-en="Supporting skills for delivering complete digital solutions.">Keahlian pendukung untuk solusi digital yang utuh.</p>
-        <div class="tags"><span class="tag">Adobe Illustrator</span><span class="tag">Microsoft 365</span><span class="tag">Mikrotik</span><span class="tag">Curriculum design</span><span class="tag">Code review</span></div>
+        <div class="tags"><span class="tag">Adobe Illustrator</span><span class="tag">Microsoft 365</span><span class="tag">VPS / Server</span><span class="tag">Linux</span><span class="tag">Curriculum design</span><span class="tag">Code review</span></div>
       </div>
     </div>
     <div class="tools" aria-hidden="true"><div>
-      <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Mikrotik</span><span>Illustrator</span>
-      <span>Laravel</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span><span>Mikrotik</span><span>Illustrator</span>
+      <span><i>▲</i>Laravel</span><span><i>🐘</i>PHP</span><span><i>🐬</i>MySQL</span><span><i>🟨</i>JavaScript</span><span><i>🌐</i>HTML5</span><span><i>🎨</i>CSS3</span><span><i>🖥️</i>VPS</span><span><i>🐧</i>Linux</span>
+      <span><i>▲</i>Laravel</span><span><i>🐘</i>PHP</span><span><i>🐬</i>MySQL</span><span><i>🟨</i>JavaScript</span><span><i>🌐</i>HTML5</span><span><i>🎨</i>CSS3</span><span><i>🖥️</i>VPS</span><span><i>🐧</i>Linux</span>
     </div></div>
   </div>
 </section>
@@ -219,11 +233,31 @@ footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.5rem;margi
 <section id="journey">
   <div class="wrap">
     <h2 data-en="Journey">Perjalanan</h2>
-    <p class="sub" data-en="Work, study and recognition so far.">Pekerjaan, pendidikan, dan penghargaan sejauh ini.</p>
-    <div class="j"><time>2026</time><div><h3>Trainer Web Programming</h3><em>Screenesia</em><p data-en="Teaching HTML, CSS, JavaScript, PHP and Laravel through hands-on projects, from curriculum to final web app deployment.">Mengajar HTML, CSS, JavaScript, PHP, dan Laravel lewat proyek langsung — dari penyusunan kurikulum sampai deploy web app akhir.</p></div></div>
-    <div class="j"><time>2026</time><div><h3 data-en="Informatics Teacher">Guru Informatika</h3><em>Al Mubarak Cendekia Islamic School</em><p data-en="Teaching computer basics, programming logic and digital literacy in an applied way.">Mengajar dasar komputer, logika pemrograman, dan literasi digital dengan pendekatan aplikatif.</p></div></div>
-    <div class="j"><time>2022</time><div><h3 data-en="Gold Medal">Medali Emas</h3><em>Pinisi Choir</em><p data-en="Gold medal achievement with Pinisi Choir.">Meraih medali emas bersama Pinisi Choir.</p></div></div>
-    <div class="j"><time>2019 — 2024</time><div><h3 data-en="B.Sc. Informatics Engineering">S1 Teknik Informatika</h3><em>Universitas Negeri Makassar</em><p data-en="Education-focused informatics. Thesis: a web-based information system for the Pinisi Choir UNM organization built with Laravel.">Teknik Informatika kependidikan. Tugas akhir: sistem informasi organisasi paduan suara Pinisi Choir UNM berbasis web dengan Laravel.</p></div></div>
+    <p class="sub" data-en="Work, organization and study so far.">Pekerjaan, organisasi, dan pendidikan sejauh ini.</p>
+
+    <div class="jgroup">
+      <h3 data-en="WORK EXPERIENCE">PENGALAMAN KERJA</h3>
+      <div class="j"><time>2026</time><div><h3>Trainer Web Programming</h3><em>Screenesia</em><p data-en="Teaching HTML, CSS, JavaScript, PHP and Laravel through hands-on projects, from curriculum to final web app deployment.">Mengajar HTML, CSS, JavaScript, PHP, dan Laravel lewat proyek langsung — dari penyusunan kurikulum sampai deploy web app akhir.</p></div></div>
+      <div class="j"><time>2026</time><div><h3 data-en="Informatics Teacher">Guru Informatika</h3><em>Al Mubarak Cendekia Islamic School</em><p data-en="Teaching computer basics, programming logic and digital literacy in an applied way.">Mengajar dasar komputer, logika pemrograman, dan literasi digital dengan pendekatan aplikatif.</p></div></div>
+    </div>
+
+    <div class="jgroup">
+      <h3 data-en="ORGANIZATION EXPERIENCE">PENGALAMAN ORGANISASI</h3>
+      <div class="j"><time>2022</time><div><h3 data-en="Gold Medal">Medali Emas</h3><em>Pinisi Choir</em><p data-en="Gold medal achievement with Pinisi Choir.">Meraih medali emas bersama Pinisi Choir.</p></div></div>
+    </div>
+
+    <div class="jgroup">
+      <h3 data-en="EDUCATION">PENDIDIKAN</h3>
+      <div class="j"><time>2019 — 2024</time><div><h3 data-en="B.Sc. Informatics Engineering">S1 Teknik Informatika</h3><em>Universitas Negeri Makassar</em><p data-en="Education-focused informatics degree.">Teknik Informatika kependidikan.</p>
+        <div class="final-project">
+          <img src="photokuy.jpeg" alt="Muh. Arfah Awaluddin T">
+          <div>
+            <small data-en="FINAL PROJECT">TUGAS AKHIR</small>
+            <p data-en="Sistem Informasi Pinisi Choir UNM — a web-based information system for the Pinisi Choir organization, built with Laravel.">Sistem Informasi Pinisi Choir UNM — sistem informasi organisasi paduan suara berbasis web, dibangun dengan Laravel.</p>
+          </div>
+        </div>
+      </div></div>
+    </div>
   </div>
 </section>
 
